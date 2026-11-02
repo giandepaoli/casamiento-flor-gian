@@ -80,6 +80,7 @@ strong { font-weight: 500; }
 }
 
 .hero__date {
+  text-wrap: balance;
   margin: 0;
   font-size: 14px;
   letter-spacing: 0.25em;
@@ -243,7 +244,7 @@ strong { font-weight: 500; }
 .carousel__slide img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: var(--radius);
   background: var(--champagne);

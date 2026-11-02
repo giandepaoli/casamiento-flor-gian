@@ -8,13 +8,13 @@
 window.CONFIG = {
   // --- Portada ---------------------------------------------------
   novios: {
-    nombre1: "Flor",
-    nombre2: "Gian",
+    nombre1: "Florencia",
+    nombre2: "Gianfranco",
   },
 
   // Fecha y hora del casamiento, con zona horaria de Argentina (-03:00).
   // Se usa para la cuenta regresiva y para mostrar la fecha.
-  fecha: "2027-04-17T19:30:00-03:00",
+  fecha: "2026-11-21T19:30:00-03:00", // la hora (19:30) es de ejemplo
 
   // Mensaje que reemplaza a la cuenta regresiva cuando llega el día.
   mensajeDiaDelCasamiento: "¡Llegó el gran día! Nos vemos en la fiesta.",
@@ -25,23 +25,23 @@ window.CONFIG = {
   fotos: [
     {
       src: "img/foto-1.jpg",
-      ancho: 1200,
-      alto: 1500,
-      alt: "Flor y Gian en la playa",
+      ancho: 953,
+      alto: 1270,
+      alt: "Florencia y Gianfranco",
       mensaje: "Así empezó todo: un verano, una charla que no terminaba más.",
     },
     {
       src: "img/foto-2.jpg",
       ancho: 1200,
       alto: 1500,
-      alt: "Flor y Gian de viaje",
+      alt: "Florencia y Gianfranco de viaje",
       mensaje: "Muchos viajes, muchos mates y algún que otro avión perdido.",
     },
     {
       src: "img/foto-3.jpg",
       ancho: 1200,
       alto: 1500,
-      alt: "Flor y Gian el día del compromiso",
+      alt: "Florencia y Gianfranco el día del compromiso",
       mensaje: "Y un día dijimos que sí. Ahora queremos festejarlo con ustedes.",
     },
   ],
@@ -68,7 +68,7 @@ window.CONFIG = {
     cvu: "0000003100012345678901",
     alias: "flor.gian.boda",
     titular: "Gian De Paoli",
-    fechaLimite: "2027-03-31", // AAAA-MM-DD
+    fechaLimite: "2026-11-19", // AAAA-MM-DD (EJEMPLO)
   },
 
   // --- Regalos ---------------------------------------------------
@@ -83,7 +83,7 @@ window.CONFIG = {
 
   // --- Confirmación de asistencia --------------------------------
   confirmacion: {
-    fechaLimite: "2027-03-15", // AAAA-MM-DD
+    fechaLimite: "2026-11-14", // AAAA-MM-DD (EJEMPLO)
     // URL de la app web de Apps Script (termina en /exec). Ver README.
     appsScriptUrl: "",
   },
