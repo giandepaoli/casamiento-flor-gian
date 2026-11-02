@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>¡Nos casamos!</title>
+  <meta name="description" content="Invitación a nuestro casamiento.">
+  <meta name="theme-color" content="#faf7f2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Íconos de línea (se usan con <use href="#i-...">) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.4A4.9 4.9 0 0 1 12 7.2a4.9 4.9 0 0 1 9.2 3.4C19.5 15.4 12 20 12 20z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+      <symbol id="i-food" viewBox="0 0 24 24"><path d="M7 3v18M4.5 3v5a2.5 2.5 0 0 0 5 0V3"/><path d="M17 21V3c-2.2 1.4-3.5 4.2-3.5 7.5V13H17"/></symbol>
+      <symbol id="i-envelope" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8C10.5 5 7 4.2 7 6.3 7 8 10 8 12 8zM12 8c1.5-3 5-3.8 5-1.7C17 8 14 8 12 8z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.8 2.8L16 9.8"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M5 15V5.5A1.5 1.5 0 0 1 6.5 4H15"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- 1. Portada -->
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">¡Nos casamos!</p>
+      <h1 class="names">
+        <span data-config="nombre1"></span>
+        <span class="names__amp">&amp;</span>
+        <span data-config="nombre2"></span>
+      </h1>
+      <div class="ornament" aria-hidden="true"></div>
+      <p class="hero__date" data-config="fechaLarga"></p>
+    </div>
+    <a class="hero__scroll" href="#cuenta-regresiva" aria-label="Ir a la cuenta regresiva"></a>
+  </header>
+
+  <main>
+    <!-- 2. Cuenta regresiva -->
+    <section class="section" id="cuenta-regresiva">
+      <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+      <h2 class="title">Falta</h2>
+      <div class="countdown" id="countdown" role="timer" aria-live="off">
+        <div class="countdown__item"><span class="countdown__num" data-unit="dias">--</span><span class="countdown__label">días</span></div>
+        <div class="countdown__item"><span class="countdown__num" data-unit="horas">--</span><span class="countdown__label">horas</span></div>
+        <div class="countdown__item"><span class="countdown__num" data-unit="minutos">--</span><span class="countdown__label">min</span></div>
+        <div class="countdown__item"><span class="countdown__num" data-unit="segundos">--</span><span class="countdown__label">seg</span></div>
+      </div>
+      <p class="countdown__done" id="countdown-done" hidden></p>
+    </section>
+
+    <!-- 3. Nosotros -->
+    <section class="section section--alt" id="nosotros">
+      <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
+      <h2 class="title">Nosotros</h2>
+      <div class="carousel">
+        <ul class="carousel__track" id="carousel-track" aria-label="Fotos"></ul>
+        <div class="carousel__dots" id="carousel-dots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 4. Dónde y cuándo -->
+    <section class="section" id="donde-y-cuando">
+      <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+      <h2 class="title">Dónde y cuándo</h2>
+      <p class="lead" data-config="lugarNombre"></p>
+      <p data-config="lugarDireccion"></p>
+      <div class="detail">
+        <p><span class="detail__label">Fecha</span><span data-config="fechaLarga"></span></p>
+        <p><span class="detail__label">Hora</span><span data-config="hora"></span></p>
+      </div>
+      <a class="btn" id="maps-link" href="#" target="_blank" rel="noopener">Ver ubicación</a>
+    </section>
+
+    <!-- 5. La comida -->
+    <section class="section section--alt" id="la-comida">
+      <svg class="icon" aria-hidden="true"><use href="#i-food"/></svg>
+      <h2 class="title">La comida</h2>
+      <div class="prose" id="menu"></div>
+    </section>
+
+    <!-- 6. Tarjeta -->
+    <section class="section" id="tarjeta">
+      <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
+      <h2 class="title">Tarjeta</h2>
+      <p>El valor de la tarjeta es de</p>
+      <p class="price"><span data-config="precio"></span> <span class="price__unit">por persona</span></p>
+      <p>Podés ir transfiriendo de a partes, como te quede cómodo, hasta el <strong data-config="tarjetaLimite"></strong>.</p>
+
+      <div class="bank">
+        <div class="bank__row">
+          <div>
+            <span class="bank__label">CVU</span>
+            <span class="bank__value" data-config="cvu"></span>
+          </div>
+          <button class="btn btn--small" type="button" data-copy="cvu">
+            <svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar</span>
+          </button>
+        </div>
+        <div class="bank__row">
+          <div>
+            <span class="bank__label">Alias</span>
+            <span class="bank__value" data-config="alias"></span>
+          </div>
+          <button class="btn btn--small" type="button" data-copy="alias">
+            <svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar</span>
+          </button>
+        </div>
+        <div class="bank__row">
+          <div>
+            <span class="bank__label">Titular</span>
+            <span class="bank__value" data-config="titular"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Regalos -->
+    <section class="section section--alt" id="regalos">
+      <svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>
+      <h2 class="title">Regalos</h2>
+      <p>Si nos querés hacer un regalo, te dejamos algunas ideas. Podés regalarnos el objeto, o transferir su valor (o lo que quieras) al mismo CVU de la tarjeta.</p>
+      <ul class="gifts" id="gifts"></ul>
+      <p class="note">No hace falta reservar ni avisar nada.</p>
+    </section>
+
+    <!-- 8. Confirmá tu asistencia -->
+    <section class="section" id="confirmar">
+      <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+      <h2 class="title">Confirmá tu asistencia</h2>
+      <p>Confirmá antes del <strong data-config="confirmacionLimite"></strong>. Una sola persona puede confirmar por toda la familia.</p>
+
+      <form class="form" id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="quien">Tu nombre y apellido</label>
+          <input id="quien" name="quien" type="text" autocomplete="name" required>
+          <p class="field__error" data-error-for="quien"></p>
+        </div>
+
+        <fieldset class="field">
+          <legend>¿Asisten?</legend>
+          <div class="choice">
+            <label class="choice__opt"><input type="radio" name="asiste" value="si" required><span>Sí, vamos</span></label>
+            <label class="choice__opt"><input type="radio" name="asiste" value="no"><span>No podemos ir</span></label>
+          </div>
+          <p class="field__error" data-error-for="asiste"></p>
+        </fieldset>
+
+        <div class="people" id="people-block" hidden>
+          <p class="people__title">¿Quiénes van?</p>
+          <ol class="people__list" id="people-list"></ol>
+          <button class="btn btn--ghost" type="button" id="add-person">+ Agregar persona</button>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Mensaje para los novios <span class="optional">(opcional)</span></label>
+          <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn--block" type="submit" id="submit">Enviar confirmación</button>
+        <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="success" id="rsvp-success" hidden tabindex="-1">
+        <p class="success__title" id="success-title"></p>
+        <p id="success-text"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__names"><span data-config="nombre1"></span> &amp; <span data-config="nombre2"></span></p>
+  </footer>
+
+  <!-- Plantilla de cada persona del formulario -->
+  <template id="person-template">
+    <li class="person">
+      <div class="person__head">
+        <span class="person__num"></span>
+        <button class="person__remove" type="button">Quitar</button>
+      </div>
+      <div class="field">
+        <label>Nombre y apellido</label>
+        <input type="text" class="person__name" autocomplete="off" required>
+        <p class="field__error"></p>
+      </div>
+      <div class="field">
+        <label>Restricción alimentaria</label>
+        <select class="person__diet">
+          <option value="Ninguna">Ninguna</option>
+          <option value="Vegetariano">Vegetariano</option>
+          <option value="Vegano">Vegano</option>
+          <option value="Celíaco">Celíaco</option>
+          <option value="Otra">Otra</option>
+        </select>
+      </div>
+      <div class="field person__other" hidden>
+        <label>¿Cuál?</label>
+        <input type="text" class="person__other-input" autocomplete="off">
+        <p class="field__error"></p>
+      </div>
+    </li>
+  </template>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
