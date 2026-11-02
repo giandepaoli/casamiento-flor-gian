@@ -85,6 +85,6 @@ window.CONFIG = {
   confirmacion: {
     fechaLimite: "2026-11-14", // AAAA-MM-DD (EJEMPLO)
     // URL de la app web de Apps Script (termina en /exec). Ver README.
-    appsScriptUrl: "",
+    appsScriptUrl: "https://script.google.com/macros/s/AKfycbzrVRtUJPAi2fdhyxOECwmhavPJnmOrLxyet8pPUmb5eIX2Ge-gNLFwUf4C7FbIP3ttvw/exec",
   },
 };
