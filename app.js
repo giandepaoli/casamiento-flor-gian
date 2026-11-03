@@ -26,12 +26,6 @@
     return capitalizar(p.weekday) + " " + p.day + " de " + p.month + " de " + p.year;
   }
 
-  // "19:30 hs"
-  function hora(date) {
-    var p = partesFecha(date, { timeZone: TZ, hour: "2-digit", minute: "2-digit", hour12: false });
-    return p.hour + ":" + p.minute + " hs";
-  }
-
   // "2027-03-31" -> "31 de marzo"
   function diaYMes(isoDia) {
     var d = new Date(isoDia + "T12:00:00Z");
@@ -48,10 +42,14 @@
     nombre1: C.novios.nombre1,
     nombre2: C.novios.nombre2,
     fechaLarga: fechaLarga(fechaEvento),
-    hora: hora(fechaEvento),
-    lugarNombre: C.lugar.nombre,
-    lugarDireccion: C.lugar.direccion,
+    menuIntro: C.menu.intro,
+    menuNota: C.menu.nota,
     precio: pesos(C.tarjeta.precioPorPersona),
+    unidadPrecio: C.tarjeta.unidadPrecio,
+    notaPrecio: C.tarjeta.notaPrecio,
+    regalosIntro: C.regalos.intro,
+    aporteIntro: C.regalos.aporteIntro,
+    aporteNota: C.regalos.aporteNota,
     cvu: C.tarjeta.cvu,
     alias: C.tarjeta.alias,
     titular: C.tarjeta.titular,
@@ -65,29 +63,49 @@
   });
 
   document.title = C.novios.nombre1 + " & " + C.novios.nombre2 + " · ¡Nos casamos!";
-  $("#maps-link").href = C.lugar.mapsUrl;
+  function crear(tag, clase, texto) {
+    var el = document.createElement(tag);
+    if (clase) el.className = clase;
+    if (texto != null) el.textContent = texto;
+    return el;
+  }
+
+  function lista(sel, items, render) {
+    var ul = $(sel);
+    items.forEach(function (item) { ul.appendChild(render(item)); });
+  }
+
+  // Dónde y cuándo
+  lista("#momentos", C.momentos, function (m) {
+    var div = crear("div", "moment");
+    div.appendChild(crear("p", "moment__title", m.titulo));
+    div.appendChild(crear("p", "moment__time", m.hora));
+    div.appendChild(crear("p", "moment__place", m.lugar));
+    div.appendChild(crear("p", "moment__addr", m.direccion));
+    var a = crear("a", "btn", "Ver ubicación");
+    a.href = m.mapsUrl;
+    a.target = "_blank";
+    a.rel = "noopener";
+    div.appendChild(a);
+    return div;
+  });
 
   // Menú
-  var menu = $("#menu");
-  C.menu.forEach(function (texto) {
-    var p = document.createElement("p");
-    p.textContent = texto;
-    menu.appendChild(p);
+  lista("#menu-principales", C.menu.principales, function (p) {
+    var li = crear("li");
+    li.appendChild(crear("span", "dishes__name", p.nombre));
+    li.appendChild(crear("span", "dishes__desc", p.descripcion));
+    return li;
+  });
+  lista("#menu-postres", C.menu.postres, function (texto) {
+    var li = crear("li");
+    li.appendChild(crear("span", "dishes__name", texto));
+    return li;
   });
 
   // Regalos
-  var gifts = $("#gifts");
-  C.regalos.forEach(function (r) {
-    var li = document.createElement("li");
-    var nombre = document.createElement("span");
-    nombre.textContent = r.nombre;
-    var precio = document.createElement("span");
-    precio.className = "gifts__price";
-    precio.textContent = "≈ " + pesos(r.precio);
-    li.appendChild(nombre);
-    li.appendChild(precio);
-    gifts.appendChild(li);
-  });
+  lista("#ideas-bebe", C.regalos.ideasBebe, function (texto) { return crear("li", null, texto); });
+  lista("#con-aporte", C.regalos.conAporte, function (texto) { return crear("li", null, texto); });
 
   // ================= Cuenta regresiva =================
 

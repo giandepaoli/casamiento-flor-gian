@@ -271,21 +271,45 @@ strong { font-weight: 500; }
 .carousel__dot.is-active { background: var(--taupe); transform: scale(1.25); }
 
 /* ============ Dónde y cuándo ============ */
-.detail {
-  margin: 28px auto 32px;
-  padding: 20px 0;
+.moments { margin-top: 28px; }
+.moment {
+  padding: 32px 0 36px;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
-.detail p { margin: 0; }
-.detail p + p { margin-top: 8px; }
-.detail__label {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 0.25em;
+.moment:last-child { border-bottom: 1px solid var(--line); }
+.section .moment p { margin: 0; }
+.moment__title {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
 }
+.moment__time {
+  margin: 4px 0 12px !important;
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--taupe-dark);
+}
+.moment__place { font-size: 18px; font-weight: 400; color: var(--taupe-dark); }
+.moment__addr { margin-bottom: 24px !important; color: var(--muted); }
+
+/* ============ La comida ============ */
+.subtitle {
+  margin: 36px auto 16px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+.dishes { margin: 0 auto; padding: 0; list-style: none; }
+.dishes li { padding: 14px 0; border-top: 1px solid var(--line); }
+.dishes li:last-child { border-bottom: 1px solid var(--line); }
+.dishes__name { display: block; font-weight: 400; color: var(--taupe-dark); }
+.dishes__desc { display: block; margin-top: 2px; font-size: 14px; line-height: 1.6; color: var(--muted); }
+.dishes--simple li { padding: 10px 0; }
+#la-comida .note { margin-top: 28px; }
 
 /* ============ Tarjeta ============ */
 .price {
@@ -342,22 +366,37 @@ strong { font-weight: 500; }
 }
 
 /* ============ Regalos ============ */
-.gifts {
-  margin: 28px auto;
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px auto 36px;
   padding: 0;
   list-style: none;
-  text-align: left;
+}
+.tags li {
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 14px;
+  color: var(--text);
+}
+.gifts {
+  margin: 20px auto 24px;
+  padding: 0;
+  list-style: none;
 }
 .gifts li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  padding: 14px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--taupe-dark);
 }
 .gifts li:first-child { border-top: 1px solid var(--line); }
-.gifts__price { flex-shrink: 0; font-weight: 400; color: var(--taupe-dark); }
 
 /* ============ Formulario ============ */
 .form { margin-top: 32px; text-align: left; }

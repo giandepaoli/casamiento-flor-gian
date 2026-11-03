@@ -70,20 +70,20 @@
     <section class="section" id="donde-y-cuando">
       <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
       <h2 class="title">Dónde y cuándo</h2>
-      <p class="lead" data-config="lugarNombre"></p>
-      <p data-config="lugarDireccion"></p>
-      <div class="detail">
-        <p><span class="detail__label">Fecha</span><span data-config="fechaLarga"></span></p>
-        <p><span class="detail__label">Hora</span><span data-config="hora"></span></p>
-      </div>
-      <a class="btn" id="maps-link" href="#" target="_blank" rel="noopener">Ver ubicación</a>
+      <p class="lead" data-config="fechaLarga"></p>
+      <div class="moments" id="momentos"></div>
     </section>
 
     <!-- 5. La comida -->
     <section class="section section--alt" id="la-comida">
       <svg class="icon" aria-hidden="true"><use href="#i-food"/></svg>
       <h2 class="title">La comida</h2>
-      <div class="prose" id="menu"></div>
+      <p data-config="menuIntro"></p>
+      <h3 class="subtitle">Platos principales</h3>
+      <ul class="dishes" id="menu-principales"></ul>
+      <h3 class="subtitle">Postres</h3>
+      <ul class="dishes dishes--simple" id="menu-postres"></ul>
+      <p class="note" data-config="menuNota"></p>
     </section>
 
     <!-- 6. Tarjeta -->
@@ -91,7 +91,8 @@
       <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
       <h2 class="title">Tarjeta</h2>
       <p>El valor de la tarjeta es de</p>
-      <p class="price"><span data-config="precio"></span> <span class="price__unit">por persona</span></p>
+      <p class="price"><span data-config="precio"></span> <span class="price__unit" data-config="unidadPrecio"></span></p>
+      <p class="note" data-config="notaPrecio"></p>
       <p>Podés ir transfiriendo de a partes, como te quede cómodo, hasta el <strong data-config="tarjetaLimite"></strong>.</p>
 
       <div class="bank">
@@ -126,8 +127,11 @@
     <section class="section section--alt" id="regalos">
       <svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>
       <h2 class="title">Regalos</h2>
-      <p>Si nos querés hacer un regalo, te dejamos algunas ideas. Podés regalarnos el objeto, o transferir su valor (o lo que quieras) al mismo CVU de la tarjeta.</p>
-      <ul class="gifts" id="gifts"></ul>
+      <p data-config="regalosIntro"></p>
+      <ul class="tags" id="ideas-bebe"></ul>
+      <p data-config="aporteIntro"></p>
+      <ul class="gifts" id="con-aporte"></ul>
+      <p data-config="aporteNota"></p>
       <p class="note">No hace falta reservar ni avisar nada.</p>
     </section>
 
