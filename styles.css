@@ -309,7 +309,8 @@ strong { font-weight: 500; }
 .dishes__name { display: block; font-weight: 400; color: var(--taupe-dark); }
 .dishes__desc { display: block; margin-top: 2px; font-size: 14px; line-height: 1.6; color: var(--muted); }
 .dishes--simple li { padding: 10px 0; }
-#la-comida .note { margin-top: 28px; }
+#la-comida .note { margin-top: 12px; }
+.section .menu-extra { margin-top: 28px; }
 
 /* ============ Tarjeta ============ */
 .price {

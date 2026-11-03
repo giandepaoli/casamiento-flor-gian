@@ -44,6 +44,8 @@
     fechaLarga: fechaLarga(fechaEvento),
     menuIntro: C.menu.intro,
     menuNota: C.menu.nota,
+    bebidasIntro: C.menu.bebidasIntro,
+    menuAdicionales: C.menu.adicionales,
     precio: pesos(C.tarjeta.precioPorPersona),
     unidadPrecio: C.tarjeta.unidadPrecio,
     notaPrecio: C.tarjeta.notaPrecio,
@@ -96,7 +98,7 @@
     li.appendChild(crear("span", "dishes__desc", p.descripcion));
     return li;
   });
-  lista("#menu-postres", C.menu.postres, function (texto) {
+  lista("#menu-bebidas", C.menu.bebidas, function (texto) {
     var li = crear("li");
     li.appendChild(crear("span", "dishes__name", texto));
     return li;

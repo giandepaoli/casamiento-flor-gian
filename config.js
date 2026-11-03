@@ -76,12 +76,14 @@ window.CONFIG = {
       { nombre: "Suprema de pollo al roquefort", descripcion: "Con mozzarella y queso azul, trocitos de nueces y papas rústicas." },
       { nombre: "Hamburguesa IT", descripcion: "Pan de campo, doble hamburguesa, doble cheddar, panceta crocante, salsa barbacoa y mayonesa picante. Con papas rústicas y salsa alioli." },
     ],
-    postres: [
-      "Bocha de helado",
-      "Flan tradicional o budín de pan",
-      "Café o té",
-      "Affogato",
+    bebidasIntro: "Una bebida por persona, a elección:",
+    bebidas: [
+      "Agua mineral",
+      "Gaseosa",
+      "Copón de vino",
+      "Cerveza Stella Artois 330 cc",
     ],
+    adicionales: "Si querés pedir más comida o bebida, podés hacerlo: los adicionales corren por cuenta de cada familia.",
     nota: "Si tenés alguna restricción alimentaria, avisanos al confirmar y lo tenemos en cuenta.",
   },
 
