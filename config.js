@@ -19,12 +19,18 @@ window.CONFIG = {
   // Mensaje que reemplaza a la cuenta regresiva cuando llega el día.
   mensajeDiaDelCasamiento: "¡Llegó el gran día!",
 
-  // --- Foto de la propuesta (debajo de la cuenta regresiva) -------
+  // --- Video de la propuesta (debajo de la cuenta regresiva) ------
+  // Arranca solo y sin sonido (los navegadores no dejan reproducir con
+  // sonido sin que la persona toque la pantalla). Al primer toque en
+  // cualquier parte de la página se activa la música, que sigue sonando
+  // en loop mientras recorren la invitación. Hay un botón flotante para
+  // silenciarla.
   propuesta: {
-    src: "img/fotos/20260723-wa0032.jpg",
-    ancho: 900,
-    alto: 1200,
-    alt: "Gianfranco arrodillado entre velas, pidiéndole casamiento a Florencia",
+    video: "img/propuesta.mp4",
+    poster: "img/propuesta-poster.jpg",
+    ancho: 464,
+    alto: 832,
+    alt: "Video de Gianfranco pidiéndole casamiento a Florencia entre velas",
     titulo: "¡Dijo que sí!",
     texto: "23 de julio de 2026",
   },
@@ -241,6 +247,14 @@ window.CONFIG = {
       alto: 1200,
       alt: "Florencia y Gianfranco abrazados en un parque",
       fecha: "25 de mayo de 2026",
+      mensaje: "",
+    },
+    {
+      src: "img/fotos/20260723-wa0032.jpg",
+      ancho: 900,
+      alto: 1200,
+      alt: "Gianfranco arrodillado entre velas, pidiéndole casamiento a Florencia",
+      fecha: "23 de julio de 2026",
       mensaje: "",
     },
     {

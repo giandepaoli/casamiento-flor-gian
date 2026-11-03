@@ -595,3 +595,68 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--t
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+
+/* ============ Video de la propuesta ============ */
+.proposal__media { position: relative; }
+.proposal__media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 464 / 832;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--champagne);
+}
+.proposal__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.92);
+  color: var(--taupe-dark);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(75, 67, 59, 0.15);
+}
+.proposal__hint svg,
+.sound-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Botón flotante de música */
+.sound-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 253, 249, 0.94);
+  color: var(--taupe-dark);
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(75, 67, 59, 0.18);
+  -webkit-tap-highlight-color: transparent;
+}
+.sound-toggle.is-on { background: var(--taupe); border-color: var(--taupe); color: var(--white); }
+.sound-toggle:focus-visible { outline: 2px solid var(--beige); outline-offset: 3px; }

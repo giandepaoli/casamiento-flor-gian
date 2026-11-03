@@ -186,17 +186,106 @@
     return img;
   }
 
-  // ================= Foto de la propuesta =================
+  // ================= Propuesta (video o foto) =================
 
   var propuesta = $("#propuesta");
-  if (C.propuesta) {
+  if (C.propuesta && C.propuesta.video) {
+    propuesta.appendChild(videoPropuesta(C.propuesta));
+  } else if (C.propuesta) {
     propuesta.appendChild(imagen(C.propuesta));
+  }
+  if (C.propuesta) {
     var cap = crear("figcaption", "proposal__caption");
     if (C.propuesta.titulo) cap.appendChild(crear("span", "proposal__title", C.propuesta.titulo));
     if (C.propuesta.texto) cap.appendChild(crear("span", "proposal__text", C.propuesta.texto));
     propuesta.appendChild(cap);
   } else {
     propuesta.hidden = true;
+  }
+
+  // Video que arranca solo y sin sonido (es lo único que permiten los
+  // navegadores). Al primer toque en cualquier parte de la página se activa
+  // el sonido y sigue en loop mientras recorren la invitación. El botón
+  // flotante permite silenciarlo o volver a activarlo.
+  function videoPropuesta(cfg) {
+    var wrap = crear("div", "proposal__media");
+    var video = document.createElement("video");
+    video.src = cfg.video;
+    if (cfg.poster) video.poster = cfg.poster;
+    if (cfg.ancho) video.width = cfg.ancho;
+    if (cfg.alto) video.height = cfg.alto;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("preload", "auto");
+    video.setAttribute("aria-label", cfg.alt || "");
+    wrap.appendChild(video);
+
+    var hint = crear("button", "proposal__hint");
+    hint.type = "button";
+    hint.innerHTML = '<svg aria-hidden="true"><use href="#i-sound-on"/></svg><span>Tocá para escuchar</span>';
+    wrap.appendChild(hint);
+
+    var toggle = crear("button", "sound-toggle");
+    toggle.type = "button";
+    toggle.innerHTML = '<svg aria-hidden="true"><use href="#i-sound-off"/></svg>';
+    document.body.appendChild(toggle);
+
+    var eligio = false; // la persona ya tocó el botón de sonido
+
+    function pintar() {
+      var conSonido = !video.muted;
+      $("use", toggle).setAttribute("href", conSonido ? "#i-sound-on" : "#i-sound-off");
+      toggle.setAttribute("aria-label", conSonido ? "Silenciar música" : "Activar música");
+      toggle.classList.toggle("is-on", conSonido);
+      hint.hidden = conSonido;
+    }
+
+    function activarSonido() {
+      video.muted = false;
+      var pr = video.play();
+      if (pr && pr.catch) pr.catch(function () { video.muted = true; pintar(); });
+      pintar();
+    }
+
+    function silenciar() {
+      video.muted = true;
+      pintar();
+    }
+
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      eligio = true;
+      video.muted ? activarSonido() : silenciar();
+    });
+    hint.addEventListener("click", function (e) {
+      e.stopPropagation();
+      eligio = true;
+      activarSonido();
+    });
+
+    // Primer toque o tecla en cualquier lado: activa la música.
+    function primerToque(e) {
+      if (e && e.target && (toggle.contains(e.target) || hint.contains(e.target))) return;
+      document.removeEventListener("click", primerToque, true);
+      document.removeEventListener("keydown", primerToque, true);
+      if (!eligio && video.muted) activarSonido();
+    }
+    document.addEventListener("click", primerToque, true);
+    document.addEventListener("keydown", primerToque, true);
+
+    // Si cambian de app o de pestaña, se pausa; al volver, sigue.
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) video.pause();
+      else video.play().catch(function () {});
+    });
+
+    pintar();
+    return wrap;
   }
 
   // ================= Momentos (mosaico) =================
