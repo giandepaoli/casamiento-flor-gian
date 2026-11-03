@@ -150,6 +150,7 @@
     if (f.alto) img.height = f.alto;
     img.loading = "lazy";
     img.decoding = "async";
+    if (f.posicion) img.style.objectPosition = f.posicion;
     var caption = document.createElement("p");
     caption.className = "carousel__caption";
     caption.textContent = f.mensaje;

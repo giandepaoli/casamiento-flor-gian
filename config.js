@@ -23,6 +23,7 @@ window.CONFIG = {
   // Fotos en la carpeta img/, idealmente de 1600px como máximo.
   // ancho y alto: tamaño real del archivo en píxeles (evita saltos al cargar).
   // fecha: texto chico arriba del mensaje (opcional).
+  // posicion: qué parte de la foto mostrar si se recorta, ej. "20% center" (opcional).
   fotos: [
     {
       src: "img/foto-1.jpg",
@@ -97,12 +98,54 @@ window.CONFIG = {
       mensaje: "Un poco de frío en Bariloche.",
     },
     {
+      src: "img/foto-11.jpg",
+      ancho: 1278,
+      alto: 959,
+      alt: "Florencia y Gianfranco en el recital de Linkin Park en Buenos Aires",
+      fecha: "",
+      mensaje: "En Buenos Aires, cuando fuimos a ver a Linkin Park.",
+      posicion: "20% center",
+    },
+    {
       src: "img/foto-10.jpg",
       ancho: 953,
       alto: 1270,
       alt: "Florencia y Gianfranco en un mirador con la ciudad de Córdoba al atardecer",
       fecha: "",
       mensaje: "En lo más alto de Córdoba.",
+    },
+    {
+      src: "img/foto-12.jpg",
+      ancho: 953,
+      alto: 1270,
+      alt: "Florencia y Gianfranco en el mirador del Cristo Redentor, en Río de Janeiro",
+      fecha: "Marzo de 2026",
+      mensaje: "Nuestras primeras vacaciones internacionales, en Río de Janeiro.",
+    },
+    {
+      src: "img/foto-13.jpg",
+      ancho: 953,
+      alto: 1270,
+      alt: "Florencia y Gianfranco con los brazos abiertos en un buggy frente al cartel de Arraial do Cabo",
+      fecha: "Marzo de 2026",
+      mensaje: "Otra más de Brasil, en Arraial do Cabo.",
+    },
+    {
+      src: "img/foto-15.jpg",
+      ancho: 1600,
+      alto: 1467,
+      alt: "Florencia y Gianfranco junto a su primer auto, con un moño rojo",
+      fecha: "25 de junio",
+      mensaje: "El día que recibimos nuestro primer auto.",
+      posicion: "85% center",
+    },
+    {
+      src: "img/foto-14.jpg",
+      ancho: 953,
+      alto: 1270,
+      alt: "Gianfranco arrodillado entre velas, pidiéndole casamiento a Florencia",
+      fecha: "23 de julio",
+      mensaje: "El día de la propuesta. ¡Dijo que sí!",
     },
   ],
 
