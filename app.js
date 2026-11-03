@@ -165,6 +165,15 @@
   });
   if (C.fotos.length < 2) dots.hidden = true;
 
+  // Con muchas fotos, un contador ("3 / 28") en lugar de los puntitos.
+  var contador = null;
+  if (C.fotos.length > 10) {
+    dots.hidden = true;
+    contador = crear("p", "carousel__count", "1 / " + C.fotos.length);
+    contador.setAttribute("aria-hidden", "true");
+    dots.parentNode.appendChild(contador);
+  }
+
   function imagen(f) {
     var img = document.createElement("img");
     img.src = f.src;
@@ -219,6 +228,7 @@
     var paso = slide.offsetWidth + parseFloat(getComputedStyle(track).columnGap || 0);
     var i = Math.round(track.scrollLeft / paso);
     $all(".carousel__dot", dots).forEach(function (d, j) { d.classList.toggle("is-active", i === j); });
+    if (contador) contador.textContent = (Math.min(i, C.fotos.length - 1) + 1) + " / " + C.fotos.length;
   }, { passive: true });
 
   // ================= Copiar CVU / alias =================

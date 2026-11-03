@@ -588,3 +588,10 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--t
 .mosaic__item--wide { grid-column: 1 / -1; }
 .mosaic__item--wide img { aspect-ratio: 4 / 3; }
 .mosaic__item--tall img { aspect-ratio: 4 / 5; }
+.section .carousel__count {
+  margin: 16px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
