@@ -64,3 +64,9 @@ magick original.jpg -resize "1600x1600>" -quality 80 img/foto-1.jpg
 ```
 
 Después cargá cada una en `config.js` (`fotos`), con su ancho y alto reales y su mensaje.
+
+## Vista previa al compartir el link
+
+La imagen que aparece al compartir el link por WhatsApp es `img/compartir.jpg` (1200×630). El título, la descripción y la URL de esa vista previa están en las etiquetas `og:` del `<head>` de `index.html` (no en `config.js`, porque WhatsApp no ejecuta JavaScript). Si cambia la URL del sitio, actualizá `og:url` y `og:image`.
+
+WhatsApp guarda la vista previa en caché: si la cambiás, puede tardar en actualizarse para links ya compartidos.

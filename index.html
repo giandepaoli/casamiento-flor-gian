@@ -3,8 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>¡Nos casamos!</title>
-  <meta name="description" content="Invitación a nuestro casamiento.">
+  <title>Florencia &amp; Gianfranco · ¡Nos casamos!</title>
+  <meta name="description" content="Sábado 21 de noviembre de 2026 en Córdoba. Toda la info y la confirmación de asistencia.">
+
+  <!-- Vista previa al compartir el link (WhatsApp, etc.). Las URLs tienen que ser absolutas. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:url" content="https://giandepaoli.github.io/casamiento-flor-gian/">
+  <meta property="og:title" content="Florencia &amp; Gianfranco · ¡Nos casamos!">
+  <meta property="og:description" content="Sábado 21 de noviembre de 2026 en Córdoba. Toda la info y la confirmación de asistencia.">
+  <meta property="og:image" content="https://giandepaoli.github.io/casamiento-flor-gian/img/compartir.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Florencia &amp; Gianfranco, ¡nos casamos! 21/11/2026, Córdoba">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#faf7f2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,8 +164,9 @@
         <fieldset class="field">
           <legend>¿Asisten?</legend>
           <div class="choice">
-            <label class="choice__opt"><input type="radio" name="asiste" value="si" required><span>Sí, vamos</span></label>
-            <label class="choice__opt"><input type="radio" name="asiste" value="no"><span>No podemos ir</span></label>
+            <label class="choice__opt"><input type="radio" name="asiste" value="ceremonia" required><span>Ceremonia</span></label>
+            <label class="choice__opt"><input type="radio" name="asiste" value="ceremonia_almuerzo"><span>Ceremonia + almuerzo</span></label>
+            <label class="choice__opt"><input type="radio" name="asiste" value="no"><span>No podemos ir :(</span></label>
           </div>
           <p class="field__error" data-error-for="asiste"></p>
         </fieldset>
@@ -195,7 +209,7 @@
         <input type="text" class="person__name" autocomplete="off" required>
         <p class="field__error"></p>
       </div>
-      <div class="field">
+      <div class="field person__diet-field">
         <label>Restricción alimentaria</label>
         <select class="person__diet">
           <option value="Ninguna">Ninguna</option>

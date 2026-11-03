@@ -6,7 +6,7 @@
  * {
  *   "id_envio": "uuid",
  *   "quien_confirma": "Nombre Apellido",
- *   "asiste": "si" | "no",
+ *   "asiste": "ceremonia" | "ceremonia_almuerzo" | "no",
  *   "invitados": [{ "nombre": "Nombre Apellido", "restriccion": "Ninguna" }],
  *   "mensaje": "texto opcional"
  * }
@@ -15,6 +15,11 @@
 var NOMBRE_HOJA = 'Confirmaciones';
 var ENCABEZADOS = ['fecha_envio', 'id_envio', 'quien_confirma', 'asiste', 'invitado', 'restriccion', 'mensaje'];
 var MAX_INVITADOS = 30;
+var OPCIONES_ASISTE = {
+  ceremonia: 'Solo ceremonia',
+  ceremonia_almuerzo: 'Ceremonia + almuerzo',
+  no: 'No',
+};
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
@@ -27,21 +32,21 @@ function doPost(e) {
     var quien = limpiar(data.quien_confirma);
     if (!quien) throw new Error('Falta el nombre de quien confirma.');
 
-    var asiste;
-    if (data.asiste === 'si') asiste = 'Sí';
-    else if (data.asiste === 'no') asiste = 'No';
-    else throw new Error('Falta indicar si asisten.');
+    var asiste = OPCIONES_ASISTE.hasOwnProperty(data.asiste) ? OPCIONES_ASISTE[data.asiste] : '';
+    if (!asiste) throw new Error('Falta indicar si asisten.');
 
     var fecha = new Date();
     var id = limpiar(data.id_envio) || Utilities.getUuid();
     var mensaje = limpiar(data.mensaje);
     var filas;
 
-    if (asiste === 'Sí') {
+    if (data.asiste !== 'no') {
+      var almuerza = data.asiste === 'ceremonia_almuerzo';
       var invitados = Array.isArray(data.invitados) ? data.invitados.slice(0, MAX_INVITADOS) : [];
       filas = invitados
         .map(function (p) {
-          return [fecha, id, quien, asiste, limpiar(p && p.nombre), limpiar(p && p.restriccion) || 'Ninguna', mensaje];
+          var restriccion = almuerza ? limpiar(p && p.restriccion) || 'Ninguna' : '';
+          return [fecha, id, quien, asiste, limpiar(p && p.nombre), restriccion, mensaje];
         })
         .filter(function (fila) { return fila[4]; });
       if (!filas.length) throw new Error('No hay invitados en la confirmación.');

@@ -224,6 +224,9 @@
   // Mientras no editen a mano a la primera persona, se completa con el nombre de quien confirma.
   var primeraEditada = false;
 
+  // "ceremonia" | "ceremonia_almuerzo" | "no"
+  function vanAlgo(asiste) { return asiste === "ceremonia" || asiste === "ceremonia_almuerzo"; }
+
   function asisteValor() {
     var r = $("input[name=asiste]:checked", form);
     return r ? r.value : "";
@@ -286,8 +289,10 @@
   $all("input[name=asiste]", form).forEach(function (r) {
     r.addEventListener("change", function () {
       setError("asiste", "");
-      var va = asisteValor() === "si";
+      var asiste = asisteValor();
+      var va = vanAlgo(asiste);
       peopleBlock.hidden = !va;
+      peopleBlock.classList.toggle("solo-ceremonia", asiste === "ceremonia");
       if (va && !peopleList.firstElementChild) agregarPersona(quien.value.trim());
     });
   });
@@ -321,11 +326,11 @@
     var asiste = asisteValor();
     if (!asiste) { setError("asiste", "Elegí una opción."); falla($("input[name=asiste]", form)); }
 
-    if (asiste === "si") {
+    if (vanAlgo(asiste)) {
       $all(".person", peopleList).forEach(function (li) {
         var n = $(".person__name", li);
         if (!n.value.trim()) { marcar(n, "Completá el nombre y apellido."); falla(n); }
-        if ($(".person__diet", li).value === "Otra") {
+        if (asiste === "ceremonia_almuerzo" && $(".person__diet", li).value === "Otra") {
           var o = $(".person__other-input", li);
           if (!o.value.trim()) { marcar(o, "Contanos cuál es la restricción."); falla(o); }
         }
@@ -346,9 +351,10 @@
   function armarPayload() {
     var asiste = asisteValor();
     var invitados = [];
-    if (asiste === "si") {
+    if (vanAlgo(asiste)) {
       invitados = $all(".person", peopleList).map(function (li) {
-        var restriccion = $(".person__diet", li).value;
+        // La restricción alimentaria solo importa si se quedan al almuerzo.
+        var restriccion = asiste === "ceremonia_almuerzo" ? $(".person__diet", li).value : "";
         if (restriccion === "Otra") restriccion = "Otra: " + $(".person__other-input", li).value.trim();
         return { nombre: $(".person__name", li).value.trim(), restriccion: restriccion };
       });
@@ -382,10 +388,11 @@
   function mostrarExito(payload) {
     form.hidden = true;
     var ok = $("#rsvp-success");
-    if (payload.asiste === "si") {
+    if (vanAlgo(payload.asiste)) {
       var n = payload.invitados.length;
+      var que = payload.asiste === "ceremonia" ? " a la ceremonia" : " a la ceremonia y al almuerzo";
       $("#success-title").textContent = "¡Gracias!";
-      $("#success-text").textContent = "Recibimos tu confirmación para " + n + (n === 1 ? " persona" : " personas") + ". ¡Nos vemos en la fiesta!";
+      $("#success-text").textContent = "Recibimos tu confirmación para " + n + (n === 1 ? " persona" : " personas") + que + ". ¡Nos vemos ahí!";
     } else {
       $("#success-title").textContent = "¡Gracias por avisar!";
       $("#success-text").textContent = "Te vamos a extrañar. Gracias por contarnos.";

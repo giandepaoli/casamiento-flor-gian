@@ -442,7 +442,9 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--t
 .field__error { margin: 6px 0 0 !important; font-size: 13px; color: var(--error); }
 .field__error:empty { display: none; }
 
-.choice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choice { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.people.solo-ceremonia .person__diet-field,
+.people.solo-ceremonia .person__other { display: none !important; }
 .choice__opt { margin: 0 !important; cursor: pointer; }
 .choice__opt input { position: absolute; opacity: 0; pointer-events: none; }
 .choice__opt span {
