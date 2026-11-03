@@ -22,27 +22,55 @@ window.CONFIG = {
   // --- Nosotros (fotos) -------------------------------------------
   // Fotos en la carpeta img/, idealmente de 1600px como máximo.
   // ancho y alto: tamaño real del archivo en píxeles (evita saltos al cargar).
+  // fecha: texto chico arriba del mensaje (opcional).
   fotos: [
     {
       src: "img/foto-1.jpg",
       ancho: 953,
       alto: 1270,
-      alt: "Florencia y Gianfranco",
-      mensaje: "Así empezó todo: un verano, una charla que no terminaba más.",
+      alt: "Florencia y Gianfranco en un sillón, en una de sus primeras fotos juntos",
+      fecha: "14 de enero de 2024",
+      mensaje: "Una de las primeras fotos que nos sacamos.",
     },
     {
       src: "img/foto-2.jpg",
-      ancho: 1200,
-      alto: 1500,
-      alt: "Florencia y Gianfranco de viaje",
-      mensaje: "Muchos viajes, muchos mates y algún que otro avión perdido.",
+      ancho: 953,
+      alto: 1270,
+      alt: "Florencia y Gianfranco abrazados en un parque de Alta Gracia",
+      fecha: "27 de enero de 2024",
+      mensaje: "En Alta Gracia.",
     },
     {
       src: "img/foto-3.jpg",
-      ancho: 1200,
-      alto: 1500,
-      alt: "Florencia y Gianfranco el día del compromiso",
-      mensaje: "Y un día dijimos que sí. Ahora queremos festejarlo con ustedes.",
+      ancho: 953,
+      alto: 1270,
+      alt: "Florencia y Gianfranco en las sierras, en sus primeras vacaciones",
+      fecha: "2 de febrero de 2024",
+      mensaje: "Nuestras primeras vacaciones juntos.",
+    },
+    {
+      src: "img/foto-4.jpg",
+      ancho: 1278,
+      alto: 959,
+      alt: "Florencia y Gianfranco de noche en Carlos Paz",
+      fecha: "28 de marzo de 2024",
+      mensaje: "En Carlos Paz.",
+    },
+    {
+      src: "img/foto-5.jpg",
+      ancho: 953,
+      alto: 1270,
+      alt: "Florencia y Gianfranco abrazados en el Parque Sarmiento",
+      fecha: "1 de junio de 2024",
+      mensaje: "Comiendo churros en el Parque Sarmiento.",
+    },
+    {
+      src: "img/foto-6.jpg",
+      ancho: 953,
+      alto: 1270,
+      alt: "Florencia y Gianfranco en un restaurante, ella con una rosa",
+      fecha: "",
+      mensaje: "Y lo que viene, lo festejamos con ustedes.",
     },
   ],
 

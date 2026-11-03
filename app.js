@@ -154,6 +154,7 @@
     caption.className = "carousel__caption";
     caption.textContent = f.mensaje;
     li.appendChild(img);
+    if (f.fecha) li.appendChild(crear("p", "carousel__date", f.fecha));
     li.appendChild(caption);
     track.appendChild(li);
 
