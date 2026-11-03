@@ -151,12 +151,9 @@
     img.loading = "lazy";
     img.decoding = "async";
     if (f.posicion) img.style.objectPosition = f.posicion;
-    var caption = document.createElement("p");
-    caption.className = "carousel__caption";
-    caption.textContent = f.mensaje;
     li.appendChild(img);
-    if (f.fecha) li.appendChild(crear("p", "carousel__date", f.fecha));
-    li.appendChild(caption);
+    if (f.mensaje) li.appendChild(crear("p", "carousel__caption", f.mensaje));
+    if (f.cita) li.appendChild(crear("p", "carousel__cite", f.cita));
     track.appendChild(li);
 
     var dot = document.createElement("span");

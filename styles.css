@@ -249,20 +249,21 @@ strong { font-weight: 500; }
   border-radius: var(--radius);
   background: var(--champagne);
 }
-.carousel__date {
-  margin: 20px 0 0 !important;
+.carousel__caption {
+  margin: 20px 12px 0 !important;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text);
+  text-wrap: balance;
+}
+.carousel__cite {
+  margin: 8px 0 0 !important;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
-}
-.carousel__date + .carousel__caption { margin-top: 6px !important; }
-.carousel__caption {
-  margin: 20px 8px 0 !important;
-  font-size: 15px;
-  font-style: italic;
-  color: var(--text);
 }
 .carousel__dots {
   display: flex;
