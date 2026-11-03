@@ -19,134 +19,58 @@ window.CONFIG = {
   // Mensaje que reemplaza a la cuenta regresiva cuando llega el día.
   mensajeDiaDelCasamiento: "¡Llegó el gran día!",
 
-  // --- Nosotros (fotos) -------------------------------------------
-  // Fotos en la carpeta img/, idealmente de 1600px como máximo.
+  // --- Foto de la propuesta (debajo de la cuenta regresiva) -------
+  propuesta: {
+    src: "img/foto-05.jpg",
+    ancho: 900,
+    alto: 1200,
+    alt: "Gianfranco arrodillado entre velas, pidiéndole casamiento a Florencia",
+    titulo: "¡Dijo que sí!",
+    texto: "23 de julio de 2026",
+  },
+
+  // --- Nosotros: carrusel (debajo de Dónde y cuándo) ---------------
+  // Fotos en la carpeta img/, de 1200px como máximo.
   // ancho y alto: tamaño real del archivo en píxeles (evita saltos al cargar).
-  // fecha: texto chico arriba del mensaje (opcional).
+  // fecha y mensaje: texto debajo de la foto (opcionales).
   // posicion: qué parte de la foto mostrar si se recorta, ej. "20% center" (opcional).
   fotos: [
     {
-      src: "img/foto-1.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco en un sillón, en una de sus primeras fotos juntos",
-      fecha: "14 de enero de 2024",
-      mensaje: "Una de las primeras fotos que nos sacamos.",
-    },
-    {
-      src: "img/foto-2.jpg",
-      ancho: 953,
-      alto: 1270,
+      src: "img/foto-09.jpg",
+      ancho: 900,
+      alto: 1200,
       alt: "Florencia y Gianfranco abrazados en un parque de Alta Gracia",
       fecha: "27 de enero de 2024",
       mensaje: "En Alta Gracia.",
     },
     {
-      src: "img/foto-3.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco en las sierras, en sus primeras vacaciones",
-      fecha: "2 de febrero de 2024",
-      mensaje: "Nuestras primeras vacaciones juntos.",
-    },
-    {
-      src: "img/foto-4.jpg",
-      ancho: 1278,
-      alto: 959,
-      alt: "Florencia y Gianfranco de noche en Carlos Paz",
-      fecha: "28 de marzo de 2024",
-      mensaje: "En Carlos Paz.",
-    },
-    {
-      src: "img/foto-5.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco abrazados en el Parque Sarmiento",
-      fecha: "1 de junio de 2024",
-      mensaje: "Comiendo churros en el Parque Sarmiento.",
-    },
-    {
-      src: "img/foto-6.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco en el sillón con Layla, su perrita, de cachorra",
-      fecha: "22 de agosto de 2024",
-      mensaje: "El primer día que trajimos a Layla.",
-    },
-    {
-      src: "img/foto-7.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco en una fiesta de egresados",
-      fecha: "30 de noviembre de 2024",
-      mensaje: "En el egreso de la Celeste.",
-    },
-    {
-      src: "img/foto-8.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco sentados en un avión",
-      fecha: "5 de febrero de 2025",
-      mensaje: "Primera vez en avión, camino a Mendoza.",
-    },
-    {
-      src: "img/foto-9.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco abrigados frente a un lago y montañas nevadas en Bariloche",
-      fecha: "18 de mayo de 2025",
-      mensaje: "Un poco de frío en Bariloche.",
-    },
-    {
-      src: "img/foto-11.jpg",
-      ancho: 1278,
-      alto: 959,
-      alt: "Florencia y Gianfranco en el recital de Linkin Park en Buenos Aires",
+      src: "img/foto-03.jpg",
+      ancho: 900,
+      alto: 1200,
+      alt: "Florencia y Gianfranco haciendo un corazón con los brazos a orillas de un lago en el sur",
       fecha: "",
-      mensaje: "En Buenos Aires, cuando fuimos a ver a Linkin Park.",
-      posicion: "20% center",
+      mensaje: "",
     },
     {
-      src: "img/foto-10.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco en un mirador con la ciudad de Córdoba al atardecer",
+      src: "img/foto-01.jpg",
+      ancho: 900,
+      alto: 1200,
+      alt: "Florencia y Gianfranco abrazados en un tobogán de una plaza",
       fecha: "",
-      mensaje: "En lo más alto de Córdoba.",
+      mensaje: "",
     },
-    {
-      src: "img/foto-12.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco en el mirador del Cristo Redentor, en Río de Janeiro",
-      fecha: "Marzo de 2026",
-      mensaje: "Nuestras primeras vacaciones internacionales, en Río de Janeiro.",
-    },
-    {
-      src: "img/foto-13.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Florencia y Gianfranco con los brazos abiertos en un buggy frente al cartel de Arraial do Cabo",
-      fecha: "Marzo de 2026",
-      mensaje: "Otra más de Brasil, en Arraial do Cabo.",
-    },
-    {
-      src: "img/foto-15.jpg",
-      ancho: 1600,
-      alto: 1467,
-      alt: "Florencia y Gianfranco junto a su primer auto, con un moño rojo",
-      fecha: "25 de junio",
-      mensaje: "El día que recibimos nuestro primer auto.",
-      posicion: "85% center",
-    },
-    {
-      src: "img/foto-14.jpg",
-      ancho: 953,
-      alto: 1270,
-      alt: "Gianfranco arrodillado entre velas, pidiéndole casamiento a Florencia",
-      fecha: "23 de julio",
-      mensaje: "El día de la propuesta. ¡Dijo que sí!",
-    },
+  ],
+
+  // --- Momentos: mosaico de fotos (antes de la Tarjeta) -------------
+  // El tamaño sale solo: las fotos horizontales ocupan todo el ancho y las
+  // verticales la mitad. Conviene que las verticales vayan de a pares.
+  mosaico: [
+    { src: "img/foto-06.jpg", ancho: 1200, alto: 900, alt: "Selfie de Florencia y Gianfranco entre las rocas, haciendo caras" },
+    { src: "img/foto-08.jpg", ancho: 900, alto: 1200, alt: "Florencia y Gianfranco sentados abrazados en una escalera" },
+    { src: "img/foto-02.jpg", ancho: 900, alto: 1200, alt: "Florencia abrazando a Gianfranco en una playa de arena con un corazón dibujado" },
+    { src: "img/foto-07.jpg", ancho: 1200, alto: 900, alt: "Florencia y Gianfranco sonriendo en un parque, ella muestra su anillo" },
+    { src: "img/foto-04.jpg", ancho: 900, alto: 1200, alt: "Florencia y Gianfranco junto a un muñeco de nieve" },
+    { src: "img/foto-10.jpg", ancho: 900, alto: 1200, alt: "Gianfranco apretándole los cachetes a Florencia, de noche" },
   ],
 
   // --- Dónde y cuándo --------------------------------------------

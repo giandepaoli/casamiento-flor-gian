@@ -538,3 +538,53 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--t
   background: var(--champagne);
 }
 .footer__names { margin: 0; font-family: var(--font-script); font-size: 40px; color: var(--taupe-dark); }
+
+/* ============ Foto de la propuesta ============ */
+.section .proposal { max-width: 440px; margin: 48px auto 0; }
+.proposal img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--champagne);
+}
+.proposal__caption { margin-top: 20px; }
+.proposal__title {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 44px;
+  line-height: 1.2;
+  color: var(--taupe-dark);
+}
+.proposal__text {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ============ Momentos (mosaico) ============ */
+.mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.mosaic__item { margin: 0; }
+.mosaic__item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--champagne);
+}
+.mosaic__item--wide { grid-column: 1 / -1; }
+.mosaic__item--wide img { aspect-ratio: 4 / 3; }
+.mosaic__item--tall img { aspect-ratio: 4 / 5; }

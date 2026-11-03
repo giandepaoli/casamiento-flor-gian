@@ -36,6 +36,7 @@
       <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8C10.5 5 7 4.2 7 6.3 7 8 10 8 12 8zM12 8c1.5-3 5-3.8 5-1.7C17 8 14 8 12 8z"/></symbol>
       <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.8 2.8L16 9.8"/></symbol>
       <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M5 15V5.5A1.5 1.5 0 0 1 6.5 4H15"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.5 8.5A1.5 1.5 0 0 1 5 7h2.5l1.5-2h6l1.5 2H19a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 19H5a1.5 1.5 0 0 1-1.5-1.5z"/><circle cx="12" cy="13" r="3.5"/></symbol>
       <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
     </defs>
   </svg>
@@ -67,24 +68,25 @@
         <div class="countdown__item"><span class="countdown__num" data-unit="segundos">--</span><span class="countdown__label">seg</span></div>
       </div>
       <p class="countdown__done" id="countdown-done" hidden></p>
+      <figure class="proposal" id="propuesta"></figure>
     </section>
 
-    <!-- 3. Nosotros -->
-    <section class="section section--alt" id="nosotros">
+    <!-- 3. Dónde y cuándo -->
+    <section class="section section--alt" id="donde-y-cuando">
+      <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+      <h2 class="title">Dónde y cuándo</h2>
+      <p class="lead" data-config="fechaLarga"></p>
+      <div class="moments" id="momentos"></div>
+    </section>
+
+    <!-- 4. Nosotros (carrusel) -->
+    <section class="section" id="nosotros">
       <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
       <h2 class="title">Nosotros</h2>
       <div class="carousel">
         <ul class="carousel__track" id="carousel-track" aria-label="Fotos"></ul>
         <div class="carousel__dots" id="carousel-dots" aria-hidden="true"></div>
       </div>
-    </section>
-
-    <!-- 4. Dónde y cuándo -->
-    <section class="section" id="donde-y-cuando">
-      <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
-      <h2 class="title">Dónde y cuándo</h2>
-      <p class="lead" data-config="fechaLarga"></p>
-      <div class="moments" id="momentos"></div>
     </section>
 
     <!-- 5. La comida -->
@@ -101,8 +103,15 @@
       <p class="note" data-config="menuNota"></p>
     </section>
 
-    <!-- 6. Tarjeta -->
-    <section class="section" id="tarjeta">
+    <!-- 6. Momentos (mosaico de fotos) -->
+    <section class="section" id="fotos">
+      <svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>
+      <h2 class="title">Momentos</h2>
+      <ul class="mosaic" id="mosaico" aria-label="Fotos"></ul>
+    </section>
+
+    <!-- 7. Tarjeta -->
+    <section class="section section--alt" id="tarjeta">
       <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
       <h2 class="title">Tarjeta</h2>
       <p>El valor de la tarjeta es de</p>
@@ -138,8 +147,8 @@
       </div>
     </section>
 
-    <!-- 7. Regalos -->
-    <section class="section section--alt" id="regalos">
+    <!-- 8. Regalos -->
+    <section class="section" id="regalos">
       <svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>
       <h2 class="title">Regalos</h2>
       <p data-config="regalosIntro"></p>
@@ -149,8 +158,8 @@
       <p class="note">No hace falta reservar ni avisar nada.</p>
     </section>
 
-    <!-- 8. Confirmá tu asistencia -->
-    <section class="section" id="confirmar">
+    <!-- 9. Confirmá tu asistencia -->
+    <section class="section section--alt" id="confirmar">
       <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
       <h2 class="title">Confirmá tu asistencia</h2>
       <p>Confirmá antes del <strong data-config="confirmacionLimite"></strong>. Una sola persona puede confirmar por toda la familia.</p>

@@ -165,6 +165,54 @@
   });
   if (C.fotos.length < 2) dots.hidden = true;
 
+  function imagen(f) {
+    var img = document.createElement("img");
+    img.src = f.src;
+    img.alt = f.alt || "";
+    if (f.ancho) img.width = f.ancho;
+    if (f.alto) img.height = f.alto;
+    img.loading = "lazy";
+    img.decoding = "async";
+    if (f.posicion) img.style.objectPosition = f.posicion;
+    return img;
+  }
+
+  // ================= Foto de la propuesta =================
+
+  var propuesta = $("#propuesta");
+  if (C.propuesta) {
+    propuesta.appendChild(imagen(C.propuesta));
+    var cap = crear("figcaption", "proposal__caption");
+    if (C.propuesta.titulo) cap.appendChild(crear("span", "proposal__title", C.propuesta.titulo));
+    if (C.propuesta.texto) cap.appendChild(crear("span", "proposal__text", C.propuesta.texto));
+    propuesta.appendChild(cap);
+  } else {
+    propuesta.hidden = true;
+  }
+
+  // ================= Momentos (mosaico) =================
+  // Horizontales a todo el ancho, verticales de a dos. Si queda una vertical
+  // sola en su fila, también va a todo el ancho para no dejar un hueco.
+
+  var mosaico = $("#mosaico");
+  var lista_m = C.mosaico || [];
+  var pendiente = null;
+  lista_m.forEach(function (f, i) {
+    var li = crear("li", "mosaic__item");
+    li.appendChild(imagen(f));
+    var horizontal = f.ancho > f.alto;
+    if (horizontal) {
+      li.classList.add("mosaic__item--wide");
+      if (pendiente) pendiente.classList.add("mosaic__item--wide", "mosaic__item--tall");
+      pendiente = null;
+    } else {
+      pendiente = pendiente ? null : li;
+    }
+    mosaico.appendChild(li);
+  });
+  if (pendiente) pendiente.classList.add("mosaic__item--wide", "mosaic__item--tall");
+  if (!lista_m.length) $("#fotos").hidden = true;
+
   track.addEventListener("scroll", function () {
     var slide = track.firstElementChild;
     if (!slide) return;
