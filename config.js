@@ -112,7 +112,6 @@ window.CONFIG = {
     ],
     aporteIntro: "Y si preferís hacernos un aporte económico al mismo CVU de la tarjeta, nos ayudás a comprar:",
     conAporte: ["Cochecito", "Colecho", "Practicuna"],
-    aporteNota: "Y, de paso, a recuperar algunas cosas que nos robaron hace unos días.",
   },
 
   // --- Confirmación de asistencia --------------------------------

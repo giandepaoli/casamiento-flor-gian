@@ -49,7 +49,6 @@
     notaPrecio: C.tarjeta.notaPrecio,
     regalosIntro: C.regalos.intro,
     aporteIntro: C.regalos.aporteIntro,
-    aporteNota: C.regalos.aporteNota,
     cvu: C.tarjeta.cvu,
     alias: C.tarjeta.alias,
     titular: C.tarjeta.titular,
