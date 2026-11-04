@@ -142,8 +142,20 @@
   }
 
   // Regalos
-  [].concat(C.regalos.intro).forEach(function (texto) {
+  [].concat(C.regalos.intro).forEach(function (texto, i) {
     $("#regalos-intro").appendChild(crear("p", null, texto));
+    // La foto del bebé va justo debajo del primer párrafo.
+    if (i === 0 && C.regalos.foto && C.regalos.foto.src) {
+      var fig = crear("figure", "baby");
+      var im = document.createElement("img");
+      im.src = C.regalos.foto.src;
+      im.alt = C.regalos.foto.alt || "";
+      im.width = C.regalos.foto.ancho;
+      im.height = C.regalos.foto.alto;
+      im.loading = "lazy";
+      fig.appendChild(im);
+      $("#regalos-intro").appendChild(fig);
+    }
   });
   lista("#ideas-bebe", C.regalos.ideasBebe, function (texto) { return crear("li", null, texto); });
   lista("#con-aporte", C.regalos.conAporte, function (texto) { return crear("li", null, texto); });

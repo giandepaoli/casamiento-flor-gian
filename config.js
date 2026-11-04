@@ -366,6 +366,8 @@ window.CONFIG = {
 
   // --- Regalos ---------------------------------------------------
   regalos: {
+    // Foto que va justo debajo del primer párrafo (dejar "" para no mostrarla).
+    foto: { src: "img/bebe.jpg", ancho: 644, alto: 529, alt: "Ecografía 3D de nuestro bebé" },
     // Cada elemento es un párrafo.
     intro: [
       "¡Estamos esperando a nuestro primer bebé!",
@@ -376,13 +378,10 @@ window.CONFIG = {
       "Muselinas o mantitas",
       "Baberos",
       "Medias, gorritos y escarpines",
-      "Toallón con capucha",
-      "Pañales (distintos talles)",
-      "Chupetes y mamaderas",
       "Kit de higiene para bebé",
-      "Sonajeros o juguetes de estimulación",
+      "Sonajeros o juguetes",
     ],
-    aporteIntro: "Si preferís regalarnos un detalle para nuestro nuevo comienzo, podés hacerlo a través del siguiente CVU, nos encantaría destinarlo a:",
+    aporteIntro: "Si preferís regalarnos un detalle para nuestro nuevo comienzo, podés hacerlo a través del CVU de arriba, nos encantaría destinarlo a:",
     conAporte: ["Cochecito", "Colecho", "Practicuna"],
   },
 

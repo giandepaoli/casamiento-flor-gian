@@ -613,6 +613,8 @@ img.is-bn { filter: grayscale(1) brightness(1.18) contrast(1.05); }
 }
 
 /* ============ Regalos ============ */
+.baby { margin: 4px auto 28px; max-width: 320px; }
+.baby img { width: 100%; height: auto; border-radius: var(--radius); background: #000; }
 .tags {
   display: flex;
   flex-wrap: wrap;
