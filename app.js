@@ -25,6 +25,12 @@
     return p.day + "." + p.month + "." + p.year;
   }
 
+  // "21 · 11 · 2026" (portada)
+  function fechaPortada(date) {
+    var p = partesFecha(date, { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" });
+    return p.day + " \u00b7 " + p.month + " \u00b7 " + p.year;
+  }
+
   // "21 de noviembre de 2026"
   function fechaTexto(date) {
     var p = partesFecha(date, { timeZone: TZ, day: "numeric", month: "long", year: "numeric" });
@@ -47,6 +53,7 @@
     nombre1: C.novios.nombre1,
     nombre2: C.novios.nombre2,
     fecha: fechaPuntos(fechaEvento),
+    fechaPortada: fechaPortada(fechaEvento),
     fechaTexto: fechaTexto(fechaEvento),
     invitacionTitulo: C.invitacion.titulo,
     invitacionScript: C.invitacion.tituloScript,
