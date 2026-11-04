@@ -42,6 +42,10 @@
     nombre1: C.novios.nombre1,
     nombre2: C.novios.nombre2,
     fechaLarga: fechaLarga(fechaEvento),
+    fechaCorta: (function () {
+      var p = partesFecha(fechaEvento, { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" });
+      return p.day + " · " + p.month + " · " + p.year;
+    })(),
     menuIntro: C.menu.intro,
     menuNota: C.menu.nota,
     bebidasIntro: C.menu.bebidasIntro,
