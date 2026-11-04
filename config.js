@@ -54,7 +54,7 @@ window.CONFIG = {
       ancho: 900,
       alto: 1200,
       alt: "Florencia y Gianfranco abrazados en el pasto",
-      mensaje: "Encontré al amor de mi vida.",
+      mensaje: "Encontré al amor de mi vida, al que ama mi alma. Lo abracé y no lo dejé ir.",
       cita: "Cantares 3:4",
     },
     {
@@ -78,7 +78,7 @@ window.CONFIG = {
       ancho: 900,
       alto: 1200,
       alt: "Florencia y Gianfranco de noche, él con la camiseta de Argentina",
-      mensaje: "Como en el fútbol: esto se juega en equipo.",
+      mensaje: "Quiero que tu mundo empiece y termine conmigo.",
       cita: "",
     },
     {
@@ -166,7 +166,7 @@ window.CONFIG = {
       ancho: 900,
       alto: 1200,
       alt: "Florencia y Gianfranco arreglados en una fiesta de egresados",
-      mensaje: "Practicando para el gran día.",
+      mensaje: "Ninguna medida de tiempo con vos será suficiente. Empecemos con «para siempre».",
       cita: "",
     },
     {
@@ -182,7 +182,7 @@ window.CONFIG = {
       ancho: 900,
       alto: 1200,
       alt: "Florencia y Gianfranco en una mesa de restaurante",
-      mensaje: "La felicidad también se come.",
+      mensaje: "Cuando te miro, confirmo que sos todo lo que quiero en mi vida.",
       cita: "",
     },
     {
@@ -214,8 +214,8 @@ window.CONFIG = {
       ancho: 1200,
       alto: 900,
       alt: "Florencia abrazando a Gianfranco en un sillón",
-      mensaje: "Plan perfecto: sillón, manta y vos.",
-      cita: "",
+      mensaje: "Si un amor es real, jamás se dará por vencido.",
+      cita: "1 Corintios 13:7",
     },
     {
       src: "img/fotos/20251031_115924.jpg",
@@ -238,8 +238,8 @@ window.CONFIG = {
       ancho: 900,
       alto: 1200,
       alt: "Florencia y Gianfranco sonriendo en un parque",
-      mensaje: "Gozosos en la esperanza; sufridos en la tribulación; constantes en la oración.",
-      cita: "Romanos 12:12",
+      mensaje: "Uno solo puede ser vencido, pero juntos, de la mano de Dios, podemos resistirlo todo.",
+      cita: "Eclesiastés 4:12",
     },
     {
       src: "img/fotos/20260525_1805370.jpg",
