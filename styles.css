@@ -584,6 +584,8 @@ img.is-bn { filter: grayscale(1) brightness(1.18) contrast(1.05); }
 }
 .price__unit { display: block; margin-top: 4px; }
 .section .price--kids { margin-top: 26px; font-size: 24px; }
+/* Misma separación que hay entre el título y el primer precio */
+.section .price--kids + p { margin-top: 36px; }
 
 .bank {
   margin-top: 36px;
