@@ -34,6 +34,10 @@ window.CONFIG = {
   // cualquier parte de la página se activa la música, que sigue sonando
   // en loop mientras recorren la invitación. Hay un botón flotante para
   // silenciarla.
+  // Canción de fondo (opcional). Poné acá la ruta del archivo de audio, por
+  // ejemplo "audio/cancion.mp3". Si queda vacío, suena el audio del video.
+  musica: "",
+
   propuesta: {
     video: "img/propuesta.mp4",
     poster: "img/propuesta-poster.jpg",

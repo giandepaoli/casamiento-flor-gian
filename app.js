@@ -268,8 +268,19 @@
 
     var eligio = false; // la persona ya tocó el botón de sonido
 
+    // Si config.js define "musica", suena esa canción en loop y el video queda
+    // siempre mudo. Si no, se usa el sonido del propio video.
+    var audio = null;
+    var activo = false;
+    if (C.musica) {
+      audio = new Audio(C.musica);
+      audio.loop = true;
+      audio.preload = "auto";
+    }
+    function conSonidoAhora() { return audio ? activo : !video.muted; }
+
     function pintar() {
-      var conSonido = !video.muted;
+      var conSonido = conSonidoAhora();
       $("use", toggle).setAttribute("href", conSonido ? "#i-sound-on" : "#i-sound-off");
       toggle.setAttribute("aria-label", conSonido ? "Silenciar música" : "Activar música");
       toggle.classList.toggle("is-on", conSonido);
@@ -277,6 +288,13 @@
     }
 
     function activarSonido() {
+      if (audio) {
+        activo = true;
+        var pa = audio.play();
+        if (pa && pa.catch) pa.catch(function () { activo = false; pintar(); });
+        pintar();
+        return;
+      }
       video.muted = false;
       var pr = video.play();
       if (pr && pr.catch) pr.catch(function () { video.muted = true; pintar(); });
@@ -284,6 +302,7 @@
     }
 
     function silenciar() {
+      if (audio) { activo = false; audio.pause(); pintar(); return; }
       video.muted = true;
       pintar();
     }
@@ -291,7 +310,7 @@
     toggle.addEventListener("click", function (e) {
       e.stopPropagation();
       eligio = true;
-      video.muted ? activarSonido() : silenciar();
+      conSonidoAhora() ? silenciar() : activarSonido();
     });
     hint.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -304,15 +323,20 @@
       if (e && e.target && (toggle.contains(e.target) || hint.contains(e.target))) return;
       document.removeEventListener("click", primerToque, true);
       document.removeEventListener("keydown", primerToque, true);
-      if (!eligio && video.muted) activarSonido();
+      if (!eligio && !conSonidoAhora()) activarSonido();
     }
     document.addEventListener("click", primerToque, true);
     document.addEventListener("keydown", primerToque, true);
 
     // Si cambian de app o de pestaña, se pausa; al volver, sigue.
     document.addEventListener("visibilitychange", function () {
-      if (document.hidden) video.pause();
-      else video.play().catch(function () {});
+      if (document.hidden) {
+        video.pause();
+        if (audio) audio.pause();
+      } else {
+        video.play().catch(function () {});
+        if (audio && activo) audio.play().catch(function () {});
+      }
     });
 
     pintar();
