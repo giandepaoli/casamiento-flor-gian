@@ -57,10 +57,10 @@ window.CONFIG = {
   // Las fotos horizontales o cuadradas se muestran completas, sin recortar.
   fotos: [
     {
-      src: "img/fotos/20241201-wa0016.jpg",
+      src: "img/fotos/20260525_180459.jpg",
       ancho: 900,
       alto: 1200,
-      alt: "Florencia y Gianfranco besándose en una fiesta de egresados",
+      alt: "Florencia y Gianfranco sonriendo en un parque",
       mensaje: "Ninguna medida de tiempo con vos será suficiente. Empecemos con «para siempre».",
       cita: "",
     },
@@ -250,10 +250,10 @@ window.CONFIG = {
       cita: "Rut 1:16",
     },
     {
-      src: "img/fotos/20260525_180459.jpg",
+      src: "img/fotos/20241201-wa0016.jpg",
       ancho: 900,
       alto: 1200,
-      alt: "Florencia y Gianfranco sonriendo en un parque",
+      alt: "Florencia y Gianfranco besándose en una fiesta de egresados",
       mensaje: "Uno solo puede ser vencido, pero juntos, de la mano de Dios, podemos resistirlo todo.",
       cita: "Eclesiastés 4:12",
     },
