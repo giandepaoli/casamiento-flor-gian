@@ -464,16 +464,9 @@ strong { font-weight: 600; color: var(--accent-strong); }
   object-fit: cover;
   object-position: center;
 }
-/* Fotos horizontales o cuadradas: completas, con la misma foto difuminada de fondo */
+/* Fotos horizontales o cuadradas: completas, sobre fondo blanco liso */
+.carousel__frame.is-wide { background: #ffffff; }
 .carousel__frame.is-wide img { object-fit: contain; }
-.carousel__frame.is-wide::before {
-  content: "";
-  position: absolute;
-  inset: -24px;
-  background: var(--foto) center / cover no-repeat;
-  filter: blur(18px) brightness(0.8);
-}
-.carousel__frame.is-bn::before { filter: grayscale(1) blur(18px) brightness(0.8); }
 img.is-bn { filter: grayscale(1) brightness(1.18) contrast(1.05); }
 .carousel__caption {
   margin: 22px 12px 0 !important;

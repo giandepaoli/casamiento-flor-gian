@@ -129,13 +129,12 @@ window.CONFIG = {
       cita: "",
     },
     {
-      src: "img/fotos/20240419_230541.jpg",
-      ancho: 1200,
-      alto: 900,
-      alt: "Florencia y Gianfranco en un recital, con luces violetas",
+      src: "img/fotos/rio-cristo.jpg",
+      ancho: 900,
+      alto: 1200,
+      alt: "Florencia y Gianfranco sonriendo en un mirador, con Río de Janeiro de fondo",
       mensaje: "Nuestra canción favorita es cualquiera que suene con vos al lado.",
       cita: "",
-      bn: true,
     },
     {
       src: "img/fotos/20240601-wa0068.jpg",

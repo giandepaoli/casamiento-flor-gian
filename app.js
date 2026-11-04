@@ -184,7 +184,7 @@
     var li = document.createElement("li");
     li.className = "carousel__slide";
     // Recuadro vertical. Las fotos horizontales o cuadradas se muestran
-    // completas, con la misma foto difuminada de fondo, para no cortarlas.
+    // completas, sobre fondo blanco liso, para no cortarlas.
     var marco = crear("div", "carousel__frame");
     if (f.ancho && f.alto && f.ancho >= f.alto) {
       marco.classList.add("is-wide");
