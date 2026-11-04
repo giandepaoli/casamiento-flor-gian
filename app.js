@@ -431,6 +431,43 @@
     if (contador) contador.textContent = (Math.min(i, C.fotos.length - 1) + 1) + " / " + C.fotos.length;
   }, { passive: true });
 
+  // ================= Tamaño de letra (para leer mejor) =================
+  // Botón flotante que agranda el texto de la invitación en tres pasos y
+  // recuerda la elección en este dispositivo.
+
+  (function () {
+    var NIVELES = [0, 1, 2];
+    var nivel = 0;
+    try { nivel = parseInt(localStorage.getItem("tamanoLetra") || "0", 10) || 0; } catch (e) { /* nada */ }
+    if (NIVELES.indexOf(nivel) < 0) nivel = 0;
+
+    var btn = crear("button", "text-toggle");
+    btn.type = "button";
+    document.body.appendChild(btn);
+
+    function aplicar(guardar) {
+      if (nivel) document.documentElement.setAttribute("data-tamano", String(nivel));
+      else document.documentElement.removeAttribute("data-tamano");
+      var maximo = nivel === NIVELES.length - 1;
+      btn.textContent = maximo ? "A\u2212" : "A+";
+      btn.setAttribute("aria-label", maximo ? "Volver al tamaño de letra normal" : "Agrandar la letra");
+      btn.classList.toggle("is-on", nivel > 0);
+      if (guardar) { try { localStorage.setItem("tamanoLetra", String(nivel)); } catch (e) { /* nada */ } }
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      // Mantiene más o menos la misma parte de la página a la vista.
+      var alto = document.documentElement.scrollHeight;
+      var ratio = alto ? window.scrollY / alto : 0;
+      nivel = (nivel + 1) % NIVELES.length;
+      aplicar(true);
+      window.scrollTo(0, ratio * document.documentElement.scrollHeight);
+    });
+
+    aplicar(false);
+  })();
+
   // ================= Copiar CVU / alias =================
 
   function copiar(texto) {
