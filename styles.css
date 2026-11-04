@@ -543,6 +543,7 @@ img.is-bn { filter: grayscale(1) brightness(1.18) contrast(1.05); }
   font-variant-numeric: lining-nums;
 }
 .price__unit { display: block; margin-top: 4px; }
+.section .price--kids { margin-top: 26px; font-size: 32px; }
 
 .bank {
   margin-top: 36px;
@@ -747,7 +748,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
 /* ============ Invitación ============ */
 .section.invite { padding-top: 112px; padding-bottom: 112px; }
 .invite__title {
-  margin: 0;
+  margin: 0 auto;
   font-family: var(--font-serif);
   font-weight: 300;
   line-height: 1;
@@ -777,7 +778,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
   text-transform: uppercase;
   color: var(--muted);
 }
-.section .invite__sign { margin: 52px 0 0; }
+.section .invite__sign { margin: 52px auto 0; }
 .invite__love {
   display: block;
   font-family: var(--font-script);
@@ -795,7 +796,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
   color: var(--text);
 }
 .section .invite__date {
-  margin: 40px 0 0;
+  margin: 40px auto 0;
   font-size: 17px;
   font-style: italic;
   color: var(--text);
@@ -843,11 +844,4 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
   font-style: italic;
   line-height: 1.55;
   color: var(--muted);
-}
-.section .kids__price {
-  margin-top: 14px;
-  font-size: 28px;
-  font-weight: 300;
-  color: var(--text);
-  font-variant-numeric: lining-nums;
 }

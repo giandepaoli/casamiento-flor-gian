@@ -59,7 +59,8 @@
     menuAdicionales: C.menu.adicionales,
     precio: pesos(C.tarjeta.precioPorPersona),
     unidadPrecio: C.tarjeta.unidadPrecio,
-    notaPrecio: C.tarjeta.notaPrecio,
+    precioNinos: pesos(C.tarjeta.precioNinos),
+    unidadPrecioNinos: C.tarjeta.unidadPrecioNinos,
     aporteIntro: C.regalos.aporteIntro,
     cvu: C.tarjeta.cvu,
     alias: C.tarjeta.alias,
@@ -121,7 +122,6 @@
     card.appendChild(crear("p", "kids__title", ninos.titulo));
     if (ninos.edad) card.appendChild(crear("p", "kids__age", ninos.edad));
     card.appendChild(crear("p", "kids__desc", ninos.descripcion));
-    card.appendChild(crear("p", "kids__price", pesos(ninos.precio)));
   } else {
     $("#menu-ninos").hidden = true;
   }

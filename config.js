@@ -344,7 +344,6 @@ window.CONFIG = {
       titulo: "Menú de niños",
       edad: "Hasta 10 años",
       descripcion: "Ñoquis, cuerdas de guitarra o supremitas de pollo. Incluye gaseosa o agua mineral. Flan o helado.",
-      precio: 20000, // en pesos, sin puntos
     },
     adicionales: "Si deseás solicitar consumiciones adicionales, estas estarán a cargo de cada familia.",
     nota: "Si tenés alguna restricción alimentaria, avisanos al confirmar, así lo tendremos en cuenta.",
@@ -354,7 +353,8 @@ window.CONFIG = {
   tarjeta: {
     precioPorPersona: 35000, // en pesos, sin puntos
     unidadPrecio: "por persona adulta",
-    notaPrecio: "El valor para menores está a confirmar.",
+    precioNinos: 20000, // en pesos, sin puntos
+    unidadPrecioNinos: "menú de niños (hasta 10 años)",
     cvu: "0000076500000012644603",
     alias: "NOSCASAMOS.FLOR.GIAN",
     titular: "Gianfranco Depaoli Gampel",
