@@ -35,6 +35,23 @@
   color: var(--text);
 }
 
+/* Variante en negro (se usa junto con .theme-dark) */
+.theme-black {
+  --bg: #0e0e0d;
+  --bg-alt: #0e0e0d;
+  --surface: #1a1a18;
+  --line: rgba(243, 242, 239, 0.16);
+}
+
+/* Variante champagne muy clarito (tema claro) */
+.theme-champagne {
+  --bg: #f8f4ea;
+  --bg-alt: #f1ebdd;
+  --surface: #fdfbf6;
+  background: var(--bg);
+  color: var(--text);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: var(--bg); }
@@ -368,7 +385,7 @@ strong { font-weight: 600; color: var(--accent-strong); }
   background: rgba(18, 17, 16, 0.6);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  color: var(--text);
+  color: #f3f2ef;
   font-family: var(--font-serif);
   font-size: 11px;
   font-weight: 600;
