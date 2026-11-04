@@ -118,7 +118,7 @@ window.CONFIG = {
       ancho: 900,
       alto: 1200,
       alt: "Florencia abrazando a Gianfranco por la espalda bajo un árbol",
-      mensaje: "Nosotros amamos porque él nos amó primero.",
+      mensaje: "Nosotros amamos porque Él nos amó primero.",
       cita: "1 Juan 4:19",
     },
     {
@@ -222,7 +222,7 @@ window.CONFIG = {
       ancho: 900,
       alto: 1200,
       alt: "Florencia y Gianfranco en un barrio chino",
-      mensaje: "Viajar es lindo. Viajar con vos, mucho más.",
+      mensaje: "Tenía el arcoíris más hermoso en sus ojos, porque al mirarme pintaba de colores mi vida.",
       cita: "",
     },
     {
