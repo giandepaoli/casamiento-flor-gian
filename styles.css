@@ -432,7 +432,37 @@ strong { font-weight: 600; color: var(--accent-strong); }
 .sound-toggle:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
 
 /* ============ Nosotros (carrusel) ============ */
-.carousel { max-width: 440px; }
+.carousel { position: relative; max-width: 440px; container-type: inline-size; }
+
+/* Flechas del carrusel: solo en pantallas con mouse (en el celular se desliza) */
+.carousel__nav {
+  display: none;
+  position: absolute;
+  top: 66.6cqw;                  /* mitad de la altura de la foto (3:4) */
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(61, 45, 35, 0.22);
+  border-radius: 50%;
+  background: rgba(251, 249, 245, 0.92);
+  color: #3d2d23;
+  cursor: pointer;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s, background 0.2s;
+}
+.carousel__nav svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.carousel__nav--prev { left: 12px; }
+.carousel__nav--next { right: 12px; }
+.carousel__nav:hover:not(:disabled) { background: #ffffff; }
+.carousel__nav:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+.carousel__nav:disabled { opacity: 0.35; cursor: default; }
+@media (hover: hover) and (pointer: fine) {
+  .carousel__nav { display: grid; }
+}
+
 .carousel__track {
   display: flex;
   gap: 16px;
