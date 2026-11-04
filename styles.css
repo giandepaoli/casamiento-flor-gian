@@ -1,15 +1,15 @@
 /* ============ Paleta y tipografía ============ */
 :root {
   /* Tema claro (por defecto): blanco cálido, gris y marrón */
-  --bg: #f4f0ea;          /* blanco cálido */
-  --bg-alt: #e2dbd2;      /* gris piedra */
-  --surface: #fcfaf7;     /* blanco para tarjetas y campos */
-  --text: #2f2823;        /* marrón muy oscuro */
-  --muted: #776b60;
-  --accent: #74604f;      /* marrón medio */
-  --accent-strong: #4c3d31;
-  --on-accent: #fcfaf7;
-  --line: rgba(47, 40, 35, 0.16);
+  --bg: #f3f2ef;          /* blanco roto */
+  --bg-alt: #dfddd9;      /* gris perla */
+  --surface: #fbfaf8;     /* blanco para tarjetas y campos */
+  --text: #2b2a28;        /* gris carbón */
+  --muted: #6f6c67;
+  --accent: #66625c;      /* gris topo */
+  --accent-strong: #403e3a;
+  --on-accent: #fbfaf8;
+  --line: rgba(43, 42, 40, 0.16);
   --error: #a4553f;
 
   --font-serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
@@ -19,17 +19,17 @@
   --gutter: 24px;
 }
 
-/* Tema oscuro (marrón café) para la portada y algunas secciones */
+/* Tema oscuro (gris grafito) para la portada y algunas secciones */
 .theme-dark {
-  --bg: #2f2924;
-  --bg-alt: #2f2924;
-  --surface: #3b342e;
-  --text: #f4f0ea;
-  --muted: #b9ac9e;
-  --accent: #d6c3a4;
-  --accent-strong: #ede1cc;
-  --on-accent: #2f2924;
-  --line: rgba(244, 240, 234, 0.18);
+  --bg: #353533;
+  --bg-alt: #353533;
+  --surface: #42413f;
+  --text: #f3f2ef;
+  --muted: #b3b0aa;
+  --accent: #d3cdc3;
+  --accent-strong: #ece8e1;
+  --on-accent: #2b2a28;
+  --line: rgba(243, 242, 239, 0.18);
   --error: #e9a08a;
   background: var(--bg);
   color: var(--text);
@@ -111,7 +111,7 @@ strong { font-weight: 600; color: var(--accent-strong); }
   height: 100%;
   object-fit: cover;
   object-position: 50% 30%;
-  filter: grayscale(0.55) sepia(0.15) blur(6px) brightness(0.72) contrast(1.05);
+  filter: grayscale(0.55) sepia(0.06) blur(6px) brightness(0.72) contrast(1.05);
   transform: scale(1.12);
 }
 .hero__bg::after {
@@ -119,8 +119,8 @@ strong { font-weight: 600; color: var(--accent-strong); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 45%, rgba(47, 41, 36, 0) 0%, rgba(47, 41, 36, 0.35) 70%),
-    linear-gradient(180deg, rgba(47, 41, 36, 0.3) 0%, rgba(47, 41, 36, 0) 30%, rgba(47, 41, 36, 0) 65%, var(--bg) 100%);
+    radial-gradient(ellipse at 50% 45%, rgba(53, 53, 51, 0) 0%, rgba(53, 53, 51, 0.35) 70%),
+    linear-gradient(180deg, rgba(53, 53, 51, 0.3) 0%, rgba(53, 53, 51, 0) 30%, rgba(53, 53, 51, 0) 65%, var(--bg) 100%);
 }
 
 .hero .flourish { margin-bottom: 26px; }
@@ -713,7 +713,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
 .footer {
   padding: 64px var(--gutter) 88px;
   text-align: center;
-  background: #241f1b;
+  background: #292928;
 }
 .footer__names {
   margin: 18px 0 10px;
