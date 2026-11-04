@@ -14,7 +14,7 @@ window.CONFIG = {
 
   // Fecha y hora de la ceremonia, con zona horaria de Argentina (-03:00).
   // Se usa para la cuenta regresiva y para mostrar la fecha.
-  fecha: "2026-11-21T11:30:00-03:00",
+  fecha: "2026-11-21T11:15:00-03:00",
 
   // Mensaje que reemplaza a la cuenta regresiva cuando llega el día.
   mensajeDiaDelCasamiento: "¡Llegó el gran día!",
@@ -312,14 +312,14 @@ window.CONFIG = {
   momentos: [
     {
       titulo: "Ceremonia",
-      hora: "11.30",
+      hora: "11.15 Hs",
       lugar: "Jardín Botánico de Córdoba",
       direccion: "Francisco Yunyent 5491, Córdoba",
       mapsUrl: "https://maps.app.goo.gl/U2WkAb4xiuZSutP56",
     },
     {
       titulo: "Almuerzo",
-      hora: "13.00 aprox.",
+      hora: "13.00 Hs aprox.",
       lugar: "IT! Italy",
       direccion: "Av. Carlos F. Gauss 5656, Córdoba",
       mapsUrl: "https://maps.app.goo.gl/fjCb7GG6YS84t2q47",

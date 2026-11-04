@@ -31,6 +31,13 @@
     return p.day + " \u00b7 " + p.month + " \u00b7 " + p.year;
   }
 
+  // "Sábado 21 de Noviembre de 2026"
+  function fechaCompleta(date) {
+    var p = partesFecha(date, { timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric" });
+    function mayus(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+    return mayus(p.weekday) + " " + p.day + " de " + mayus(p.month) + " de " + p.year;
+  }
+
   // "21 de noviembre de 2026"
   function fechaTexto(date) {
     var p = partesFecha(date, { timeZone: TZ, day: "numeric", month: "long", year: "numeric" });
@@ -54,6 +61,7 @@
     nombre2: C.novios.nombre2,
     fecha: fechaPuntos(fechaEvento),
     fechaPortada: fechaPortada(fechaEvento),
+    fechaCompleta: fechaCompleta(fechaEvento),
     fechaTexto: fechaTexto(fechaEvento),
     invitacionTitulo: C.invitacion.titulo,
     invitacionScript: C.invitacion.tituloScript,
