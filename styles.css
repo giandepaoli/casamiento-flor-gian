@@ -575,14 +575,15 @@ img.is-bn { filter: grayscale(1) brightness(1.18) contrast(1.05); }
 
 /* ============ Tarjeta ============ */
 .price {
-  font-size: 44px;
-  font-weight: 300;
-  line-height: 1.2;
+  font-size: 24px;               /* mismo tamaño que el título "Tarjeta" */
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.2em;
   color: var(--text);
   font-variant-numeric: lining-nums;
 }
 .price__unit { display: block; margin-top: 4px; }
-.section .price--kids { margin-top: 26px; font-size: 32px; }
+.section .price--kids { margin-top: 26px; font-size: 24px; }
 
 .bank {
   margin-top: 36px;
