@@ -36,7 +36,7 @@ window.CONFIG = {
   // silenciarla.
   // Canción de fondo (opcional). Poné acá la ruta del archivo de audio, por
   // ejemplo "audio/cancion.mp3". Si queda vacío, suena el audio del video.
-  musica: "",
+  musica: "audio/cancion.mp3",
 
   propuesta: {
     video: "img/propuesta.mp4",
