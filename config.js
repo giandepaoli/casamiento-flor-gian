@@ -190,8 +190,8 @@ window.CONFIG = {
       ancho: 675,
       alto: 1200,
       alt: "Florencia y Gianfranco abrazados de cerca",
-      mensaje: "Todo lo disculpa, todo lo cree, todo lo espera, todo lo soporta.",
-      cita: "1 Corintios 13:7",
+      mensaje: "Porque amar no es simplemente quedarse: amar es elegir quedarse una y otra vez.",
+      cita: "",
     },
     {
       src: "img/fotos/20250119-wa0032.jpg",
@@ -262,8 +262,8 @@ window.CONFIG = {
       ancho: 675,
       alto: 1200,
       alt: "Florencia y Gianfranco abrazados entre velas, después de la propuesta",
-      mensaje: "Cordón de tres dobleces no se rompe pronto.",
-      cita: "Eclesiastés 4:12",
+      mensaje: "Vos vas a cuidar de mí, yo de vos y Dios de nosotros.",
+      cita: "",
     },
     {
       src: "img/fotos/20260725-wa0009.jpg",
