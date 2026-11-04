@@ -1,15 +1,15 @@
 /* ============ Paleta y tipografía ============ */
 :root {
-  /* Tema claro (por defecto): blanco cálido, gris y marrón */
-  --bg: #f3f2ef;          /* blanco roto */
-  --bg-alt: #dfddd9;      /* gris perla */
-  --surface: #fbfaf8;     /* blanco para tarjetas y campos */
-  --text: #2b2a28;        /* gris carbón */
-  --muted: #6f6c67;
-  --accent: #66625c;      /* gris topo */
-  --accent-strong: #403e3a;
-  --on-accent: #fbfaf8;
-  --line: rgba(43, 42, 40, 0.16);
+  /* Paleta: marfil, taupe y chocolate, con blanco, negro y gris */
+  --bg: #f4f0e9;          /* marfil */
+  --bg-alt: #e4dacd;      /* taupe claro */
+  --surface: #fbf9f5;     /* blanco para tarjetas y campos */
+  --text: #2a2622;        /* carbón cálido */
+  --muted: #6e655c;       /* gris topo */
+  --accent: #5e4739;      /* chocolate */
+  --accent-strong: #3d2d23;
+  --on-accent: #fbf9f5;
+  --line: rgba(42, 38, 34, 0.16);
   --error: #a4553f;
 
   --font-serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
@@ -19,17 +19,17 @@
   --gutter: 24px;
 }
 
-/* Tema oscuro (gris grafito) para la portada y algunas secciones */
+/* Tema oscuro (chocolate) para las secciones oscuras */
 .theme-dark {
-  --bg: #353533;
-  --bg-alt: #353533;
-  --surface: #42413f;
-  --text: #f3f2ef;
-  --muted: #b3b0aa;
-  --accent: #d3cdc3;
-  --accent-strong: #ece8e1;
-  --on-accent: #2b2a28;
-  --line: rgba(243, 242, 239, 0.18);
+  --bg: #47362b;
+  --bg-alt: #47362b;
+  --surface: #55433a;
+  --text: #f4f0e9;
+  --muted: #c4b6a8;
+  --accent: #d3c4b4;
+  --accent-strong: #efe7dc;
+  --on-accent: #2a2622;
+  --line: rgba(244, 240, 233, 0.18);
   --error: #e9a08a;
   background: var(--bg);
   color: var(--text);
@@ -40,6 +40,9 @@
   --bg: #0e0e0d;
   --bg-alt: #0e0e0d;
   --surface: #1a1a18;
+  --muted: #b9b4ac;
+  --accent: #d6d2cb;
+  --accent-strong: #f1eee8;
   --line: rgba(243, 242, 239, 0.16);
 }
 
@@ -122,7 +125,7 @@ strong { font-weight: 600; color: var(--accent-strong); }
   padding: 48px var(--gutter) 88px;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(180deg, #ffffff 0%, #e9e1d1 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e4dacd 100%);
   color: #12110f;
 }
 
@@ -768,7 +771,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
 .footer {
   padding: 64px var(--gutter) 88px;
   text-align: center;
-  background: #292928;
+  background: var(--bg);
 }
 .footer__names {
   margin: 18px 0 10px;
