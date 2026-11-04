@@ -407,10 +407,13 @@
     btnPrev.disabled = i <= 0;
     btnNext.disabled = i >= C.fotos.length - 1;
   }
-  if (C.fotos.length < 2) {
+  var hayMouse = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (C.fotos.length < 2 || !hayMouse) {
     btnPrev.hidden = true;
     btnNext.hidden = true;
   } else {
+    btnPrev.hidden = false;
+    btnNext.hidden = false;
     btnPrev.addEventListener("click", function () { irA(-1); });
     btnNext.addEventListener("click", function () { irA(1); });
     track.tabIndex = 0;
@@ -419,6 +422,38 @@
       else if (e.key === "ArrowRight") { e.preventDefault(); irA(1); }
     });
     pintarFlechas();
+  }
+
+  // Animación al deslizar: la foto activa queda al frente y las vecinas se
+  // achican y se desvanecen un poco; la foto se mueve apenas más lento que el
+  // marco (efecto de profundidad). Se calcula con --a (distancia 0 a 1) y --d.
+  var movimiento = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var slides = $all(".carousel__slide", track);
+  var animando = false;
+  function animarSlides() {
+    animando = false;
+    var paso = pasoCarrusel();
+    if (!paso) return;
+    var x = track.scrollLeft;
+    for (var k = 0; k < slides.length; k++) {
+      var d = (slides[k].offsetLeft - x) / paso;
+      if (d > 1.6 || d < -1.6) { if (slides[k]._fuera) continue; d = d > 0 ? 1.6 : -1.6; slides[k]._fuera = true; }
+      else slides[k]._fuera = false;
+      var a = Math.min(1, Math.abs(d));
+      slides[k].style.setProperty("--a", a.toFixed(3));
+      slides[k].style.setProperty("--d", Math.max(-1, Math.min(1, d)).toFixed(3));
+    }
+  }
+  function pedirAnimacion() {
+    if (!movimiento || animando) return;
+    animando = true;
+    window.requestAnimationFrame(animarSlides);
+  }
+  if (movimiento) {
+    track.classList.add("is-animated");
+    track.addEventListener("scroll", pedirAnimacion, { passive: true });
+    window.addEventListener("resize", pedirAnimacion);
+    animarSlides();
   }
 
   track.addEventListener("scroll", function () {

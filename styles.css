@@ -509,6 +509,29 @@ html[data-tamano="2"] main, html[data-tamano="2"] .footer { zoom: 1.4; }
 .carousel__slide {
   flex: 0 0 100%;
   scroll-snap-align: center;
+  scroll-snap-stop: always;      /* un deslizamiento = una foto, también en iPhone */
+}
+.carousel__track { overscroll-behavior-x: contain; }
+
+/* Animación al deslizar (--a: 0 en la foto activa, 1 en las vecinas) */
+.carousel__track.is-animated .carousel__slide { --a: 0; --d: 0; }
+.carousel__track.is-animated .carousel__frame {
+  transform: translateZ(0) scale(calc(1 - var(--a) * 0.08));
+  opacity: calc(1 - var(--a) * 0.55);
+  will-change: transform, opacity;
+}
+.carousel__track.is-animated .carousel__frame img {
+  transform: translate3d(calc(var(--d) * -7%), 0, 0) scale(1.08);
+  will-change: transform;
+}
+/* Las fotos horizontales se ven completas: sin ampliar, solo se desplazan un poco */
+.carousel__track.is-animated .carousel__frame.is-wide img {
+  transform: translate3d(calc(var(--d) * -4%), 0, 0);
+}
+.carousel__track.is-animated .carousel__caption,
+.carousel__track.is-animated .carousel__cite {
+  opacity: calc(1 - var(--a) * 1.6);
+  transform: translate3d(0, calc(var(--a) * 12px), 0);
 }
 .carousel__frame {
   position: relative;
