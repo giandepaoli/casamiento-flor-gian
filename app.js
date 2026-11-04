@@ -10,7 +10,6 @@
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
-  function capitalizar(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
   function partesFecha(date, opciones) {
     var partes = {};
@@ -20,10 +19,16 @@
     return partes;
   }
 
-  // "Sábado 17 de abril de 2027"
-  function fechaLarga(date) {
-    var p = partesFecha(date, { timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric" });
-    return capitalizar(p.weekday) + " " + p.day + " de " + p.month + " de " + p.year;
+  // "21.11.2026"
+  function fechaPuntos(date) {
+    var p = partesFecha(date, { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" });
+    return p.day + "." + p.month + "." + p.year;
+  }
+
+  // "21 de noviembre de 2026"
+  function fechaTexto(date) {
+    var p = partesFecha(date, { timeZone: TZ, day: "numeric", month: "long", year: "numeric" });
+    return p.day + " de " + p.month + " de " + p.year;
   }
 
   // "2027-03-31" -> "31 de marzo"
@@ -41,11 +46,13 @@
   var valores = {
     nombre1: C.novios.nombre1,
     nombre2: C.novios.nombre2,
-    fechaLarga: fechaLarga(fechaEvento),
-    fechaCorta: (function () {
-      var p = partesFecha(fechaEvento, { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" });
-      return p.day + " · " + p.month + " · " + p.year;
-    })(),
+    fecha: fechaPuntos(fechaEvento),
+    fechaTexto: fechaTexto(fechaEvento),
+    invitacionTitulo: C.invitacion.titulo,
+    invitacionScript: C.invitacion.tituloScript,
+    invitacionTexto: C.invitacion.texto,
+    invitacionDespedida: C.invitacion.despedida,
+    invitacionFirma: C.invitacion.firma,
     menuIntro: C.menu.intro,
     menuNota: C.menu.nota,
     bebidasIntro: C.menu.bebidasIntro,
@@ -53,7 +60,6 @@
     precio: pesos(C.tarjeta.precioPorPersona),
     unidadPrecio: C.tarjeta.unidadPrecio,
     notaPrecio: C.tarjeta.notaPrecio,
-    regalosIntro: C.regalos.intro,
     aporteIntro: C.regalos.aporteIntro,
     cvu: C.tarjeta.cvu,
     alias: C.tarjeta.alias,
@@ -108,7 +114,22 @@
     return li;
   });
 
+  // Menú de niños
+  var ninos = C.menu.ninos;
+  if (ninos) {
+    var card = $("#menu-ninos");
+    card.appendChild(crear("p", "kids__title", ninos.titulo));
+    if (ninos.edad) card.appendChild(crear("p", "kids__age", ninos.edad));
+    card.appendChild(crear("p", "kids__desc", ninos.descripcion));
+    card.appendChild(crear("p", "kids__price", pesos(ninos.precio)));
+  } else {
+    $("#menu-ninos").hidden = true;
+  }
+
   // Regalos
+  [].concat(C.regalos.intro).forEach(function (texto) {
+    $("#regalos-intro").appendChild(crear("p", null, texto));
+  });
   lista("#ideas-bebe", C.regalos.ideasBebe, function (texto) { return crear("li", null, texto); });
   lista("#con-aporte", C.regalos.conAporte, function (texto) { return crear("li", null, texto); });
 
@@ -147,15 +168,16 @@
   C.fotos.forEach(function (f, i) {
     var li = document.createElement("li");
     li.className = "carousel__slide";
-    var img = document.createElement("img");
-    img.src = f.src;
-    img.alt = f.alt || "";
-    if (f.ancho) img.width = f.ancho;
-    if (f.alto) img.height = f.alto;
-    img.loading = "lazy";
-    img.decoding = "async";
-    if (f.posicion) img.style.objectPosition = f.posicion;
-    li.appendChild(img);
+    // Recuadro vertical. Las fotos horizontales o cuadradas se muestran
+    // completas, con la misma foto difuminada de fondo, para no cortarlas.
+    var marco = crear("div", "carousel__frame");
+    if (f.ancho && f.alto && f.ancho >= f.alto) {
+      marco.classList.add("is-wide");
+      marco.style.setProperty("--foto", 'url("' + f.src + '")');
+    }
+    if (f.bn) marco.classList.add("is-bn");
+    marco.appendChild(imagen(f));
+    li.appendChild(marco);
     if (f.mensaje) li.appendChild(crear("p", "carousel__caption", f.mensaje));
     if (f.cita) li.appendChild(crear("p", "carousel__cite", f.cita));
     track.appendChild(li);
@@ -184,6 +206,7 @@
     img.loading = "lazy";
     img.decoding = "async";
     if (f.posicion) img.style.objectPosition = f.posicion;
+    if (f.bn) img.classList.add("is-bn");
     return img;
   }
 

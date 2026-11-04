@@ -14,10 +14,19 @@ window.CONFIG = {
 
   // Fecha y hora de la ceremonia, con zona horaria de Argentina (-03:00).
   // Se usa para la cuenta regresiva y para mostrar la fecha.
-  fecha: "2026-11-21T11:00:00-03:00",
+  fecha: "2026-11-21T11:30:00-03:00",
 
   // Mensaje que reemplaza a la cuenta regresiva cuando llega el día.
   mensajeDiaDelCasamiento: "¡Llegó el gran día!",
+
+  // --- Invitación (debajo de la portada) ---------------------------
+  invitacion: {
+    titulo: "Nos vamos a",
+    tituloScript: "casar",
+    texto: "Sería un honor y una inmensa alegría celebrar este momento tan especial con las personas que más amamos.",
+    despedida: "Con amor,",
+    firma: "Flor y Gian",
+  },
 
   // --- Video de la propuesta (debajo de la cuenta regresiva) ------
   // Arranca solo y sin sonido (los navegadores no dejan reproducir con
@@ -40,7 +49,17 @@ window.CONFIG = {
   // ancho y alto: tamaño real del archivo en píxeles (evita saltos al cargar).
   // mensaje: frase debajo de la foto. cita: autor o versículo, en letra chica (opcionales).
   // posicion: qué parte de la foto mostrar si se recorta, ej. "20% center" (opcional).
+  // bn: true para mostrarla en blanco y negro (opcional).
+  // Las fotos horizontales o cuadradas se muestran completas, sin recortar.
   fotos: [
+    {
+      src: "img/fotos/20241201-wa0016.jpg",
+      ancho: 900,
+      alto: 1200,
+      alt: "Florencia y Gianfranco besándose en una fiesta de egresados",
+      mensaje: "Ninguna medida de tiempo con vos será suficiente. Empecemos con «para siempre».",
+      cita: "",
+    },
     {
       src: "img/fotos/20240114_172550.jpg",
       ancho: 1200,
@@ -112,6 +131,7 @@ window.CONFIG = {
       alt: "Florencia y Gianfranco en un recital, con luces violetas",
       mensaje: "Nuestra canción favorita es cualquiera que suene con vos al lado.",
       cita: "",
+      bn: true,
     },
     {
       src: "img/fotos/20240601-wa0068.jpg",
@@ -154,20 +174,12 @@ window.CONFIG = {
       cita: "",
     },
     {
-      src: "img/fotos/20241201-wa0016.jpg",
-      ancho: 900,
-      alto: 1200,
-      alt: "Florencia y Gianfranco besándose en una fiesta de egresados",
-      mensaje: "Vístanse de amor, que es el vínculo perfecto.",
-      cita: "Colosenses 3:14",
-    },
-    {
       src: "img/fotos/20241201-wa0017.jpg",
       ancho: 900,
       alto: 1200,
       alt: "Florencia y Gianfranco arreglados en una fiesta de egresados",
-      mensaje: "Ninguna medida de tiempo con vos será suficiente. Empecemos con «para siempre».",
-      cita: "",
+      mensaje: "Vístanse de amor, que es el vínculo perfecto.",
+      cita: "Colosenses 3:14",
     },
     {
       src: "img/fotos/20241214_172425_242-2.jpg",
@@ -296,14 +308,14 @@ window.CONFIG = {
   momentos: [
     {
       titulo: "Ceremonia",
-      hora: "11:00 hs",
+      hora: "11.30",
       lugar: "Jardín Botánico de Córdoba",
       direccion: "Francisco Yunyent 5491, Córdoba",
       mapsUrl: "https://maps.app.goo.gl/U2WkAb4xiuZSutP56",
     },
     {
       titulo: "Almuerzo",
-      hora: "13:00 hs aprox.",
+      hora: "13.00 aprox.",
       lugar: "IT! Italy",
       direccion: "Av. Carlos F. Gauss 5656, Córdoba",
       mapsUrl: "https://maps.app.goo.gl/fjCb7GG6YS84t2q47",
@@ -328,8 +340,14 @@ window.CONFIG = {
       "Copón de vino",
       "Cerveza Stella Artois 330 cc",
     ],
-    adicionales: "Si querés pedir más comida o bebida, podés hacerlo: los adicionales corren por cuenta de cada familia.",
-    nota: "Si tenés alguna restricción alimentaria, avisanos al confirmar y lo tenemos en cuenta.",
+    ninos: {
+      titulo: "Menú de niños",
+      edad: "Hasta 10 años",
+      descripcion: "Ñoquis, cuerdas de guitarra o supremitas de pollo. Incluye gaseosa o agua mineral. Flan o helado.",
+      precio: 20000, // en pesos, sin puntos
+    },
+    adicionales: "Si deseás solicitar consumiciones adicionales, estas estarán a cargo de cada familia.",
+    nota: "Si tenés alguna restricción alimentaria, avisanos al confirmar, así lo tendremos en cuenta.",
   },
 
   // --- Tarjeta ---------------------------------------------------
@@ -345,7 +363,11 @@ window.CONFIG = {
 
   // --- Regalos ---------------------------------------------------
   regalos: {
-    intro: "¡Estamos esperando a nuestro primer bebé! Si nos querés hacer un regalo, te dejamos algunas ideas de cositas que nos van a servir:",
+    // Cada elemento es un párrafo.
+    intro: [
+      "¡Estamos esperando a nuestro primer bebé!",
+      "Si nos querés hacer un regalo, te dejamos algunas ideas de cositas que nos van a servir:",
+    ],
     ideasBebe: [
       "Bodies y ropita de 0 a 3 meses",
       "Muselinas o mantitas",
@@ -357,7 +379,7 @@ window.CONFIG = {
       "Kit de higiene para bebé",
       "Sonajeros o juguetes de estimulación",
     ],
-    aporteIntro: "Y si preferís hacernos un aporte económico al mismo CVU de la tarjeta, nos ayudás a comprar:",
+    aporteIntro: "Si preferís regalarnos un detalle para nuestro nuevo comienzo, podés hacerlo a través del siguiente CVU, nos encantaría destinarlo a:",
     conAporte: ["Cochecito", "Colecho", "Practicuna"],
   },
 

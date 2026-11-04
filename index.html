@@ -42,6 +42,7 @@
       <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/></symbol>
       <symbol id="i-flourish" viewBox="0 0 120 20"><path d="M4 10h38M78 10h38"/><path d="M60 10c-4-6-12-8-16-4-3 3 0 7 4 6 3-1 3-5 0-5"/><path d="M60 10c4-6 12-8 16-4 3 3 0 7-4 6-3-1-3-5 0-5"/><path d="M60 4.5l2.2 3.5L60 11.5 57.8 8z"/><path d="M60 14v3"/></symbol>
       <symbol id="i-arrow-down" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><path d="M12 7v9.5M8.2 12.8 12 16.6l3.8-3.8"/></symbol>
+      <symbol id="i-olive" viewBox="0 0 170 40"><path d="M6 30.0 L12 29.3 L18 28.6 L24 27.9 L30 27.2 L36 26.4 L42 25.6 L48 24.8 L54 23.9 L60 23.0 L66 22.1 L72 21.2 L78 20.3 L84 19.3 L90 18.3 L96 17.3 L102 16.2 L108 15.1 L114 14.0 L120 12.9 L126 11.8 L132 10.6 L138 9.4 L144 8.2 L150 6.9"/><path transform="translate(22.0 28.2) rotate(-47)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(34.0 26.6) rotate(33)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(46.0 25.0) rotate(-48)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(58.0 23.3) rotate(32)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(70.0 21.5) rotate(-49)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(82.0 19.6) rotate(31)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(94.0 17.6) rotate(-50)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(106.0 15.5) rotate(30)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(118.0 13.3) rotate(-51)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(130.0 11.0) rotate(29)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path transform="translate(150.0 6.9) rotate(-12)" d="M0 0Q7.5 -4.2 15 0Q7.5 4.2 0 0z"/><path d="M52 24.2 L53 28.2"/><circle cx="53.5" cy="30.8" r="2.4"/><path d="M100 16.6 L101 20.6"/><circle cx="101.5" cy="23.2" r="2.4"/></symbol>
       <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
     </defs>
   </svg>
@@ -56,13 +57,28 @@
         <span class="names__amp">&amp;</span>
         <span data-config="nombre2"></span>
       </h1>
-      <p class="hero__date" data-config="fechaLarga"></p>
+      <p class="hero__date" data-config="fecha"></p>
     </div>
-    <a class="hero__scroll" href="#cuenta-regresiva" aria-label="Ir a la cuenta regresiva"><svg aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+    <a class="hero__scroll" href="#invitacion" aria-label="Ir a la invitación"><svg aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
   </header>
 
   <main>
-    <!-- 2. Cuenta regresiva -->
+    <!-- 2. Invitación -->
+    <section class="section invite" id="invitacion">
+      <h2 class="invite__title">
+        <span class="invite__caps" data-config="invitacionTitulo"></span>
+        <span class="invite__script" data-config="invitacionScript"></span>
+      </h2>
+      <p class="invite__text" data-config="invitacionTexto"></p>
+      <p class="invite__sign">
+        <span class="invite__love" data-config="invitacionDespedida"></span>
+        <span class="invite__names" data-config="invitacionFirma"></span>
+      </p>
+      <p class="invite__date" data-config="fechaTexto"></p>
+      <svg class="olive" aria-hidden="true"><use href="#i-olive"/></svg>
+    </section>
+
+    <!-- 3. Cuenta regresiva -->
     <section class="section theme-dark" id="cuenta-regresiva">
       <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
       <h2 class="title">Falta</h2>
@@ -76,15 +92,15 @@
       <figure class="proposal" id="propuesta"></figure>
     </section>
 
-    <!-- 3. Dónde y cuándo -->
+    <!-- 4. Dónde y cuándo -->
     <section class="section" id="donde-y-cuando">
       <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
       <h2 class="title">Dónde y cuándo</h2>
-      <p class="lead" data-config="fechaLarga"></p>
+      <p class="lead" data-config="fecha"></p>
       <div class="moments" id="momentos"></div>
     </section>
 
-    <!-- 4. Nosotros (carrusel) -->
+    <!-- 5. Nosotros (carrusel) -->
     <section class="section section--alt" id="nosotros">
       <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
       <h2 class="title">Nosotros</h2>
@@ -94,7 +110,7 @@
       </div>
     </section>
 
-    <!-- 5. La comida -->
+    <!-- 6. La comida -->
     <section class="section" id="la-comida">
       <svg class="icon" aria-hidden="true"><use href="#i-food"/></svg>
       <h2 class="title">La comida</h2>
@@ -104,18 +120,19 @@
       <h3 class="subtitle">Bebidas</h3>
       <p data-config="bebidasIntro"></p>
       <ul class="dishes dishes--simple" id="menu-bebidas"></ul>
+      <div class="kids" id="menu-ninos"></div>
       <p class="menu-extra" data-config="menuAdicionales"></p>
       <p class="note" data-config="menuNota"></p>
     </section>
 
-    <!-- 6. Momentos (mosaico de fotos) -->
+    <!-- 7. Momentos (mosaico de fotos) -->
     <section class="section theme-dark" id="fotos">
       <svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>
       <h2 class="title">Momentos</h2>
       <ul class="mosaic" id="mosaico" aria-label="Fotos"></ul>
     </section>
 
-    <!-- 7. Tarjeta -->
+    <!-- 8. Tarjeta -->
     <section class="section section--alt" id="tarjeta">
       <svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>
       <h2 class="title">Tarjeta</h2>
@@ -152,18 +169,18 @@
       </div>
     </section>
 
-    <!-- 8. Regalos -->
+    <!-- 9. Regalos -->
     <section class="section" id="regalos">
       <svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>
       <h2 class="title">Regalos</h2>
-      <p data-config="regalosIntro"></p>
+      <div id="regalos-intro"></div>
       <ul class="tags" id="ideas-bebe"></ul>
       <p data-config="aporteIntro"></p>
       <ul class="gifts" id="con-aporte"></ul>
       <p class="note">No hace falta reservar ni avisar nada.</p>
     </section>
 
-    <!-- 9. Confirmá tu asistencia -->
+    <!-- 10. Confirmá tu asistencia -->
     <section class="section section--alt" id="confirmar">
       <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
       <h2 class="title">Confirmá tu asistencia</h2>
@@ -211,7 +228,7 @@
   <footer class="footer theme-dark">
     <svg class="flourish" aria-hidden="true"><use href="#i-flourish"/></svg>
     <p class="footer__names"><span data-config="nombre1"></span> <span class="footer__amp">&amp;</span> <span data-config="nombre2"></span></p>
-    <p class="footer__date" data-config="fechaCorta"></p>
+    <p class="footer__date" data-config="fecha"></p>
   </footer>
 
   <!-- Plantilla de cada persona del formulario -->
