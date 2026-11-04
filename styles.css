@@ -111,7 +111,7 @@ strong { font-weight: 600; color: var(--accent-strong); }
   height: 100%;
   object-fit: cover;
   object-position: 50% 30%;
-  filter: grayscale(1) blur(6px) brightness(0.72) contrast(1.05);
+  filter: grayscale(0.55) sepia(0.15) blur(6px) brightness(0.72) contrast(1.05);
   transform: scale(1.12);
 }
 .hero__bg::after {
