@@ -48,9 +48,9 @@
 
 /* Variante champagne muy clarito (tema claro) */
 .theme-champagne {
-  --bg: #f8f4ea;
-  --bg-alt: #f1ebdd;
-  --surface: #fdfbf6;
+  --bg: #f1e3cb;
+  --bg-alt: #e8d7bb;
+  --surface: #f9f1e2;
   background: var(--bg);
   color: var(--text);
 }
@@ -125,7 +125,7 @@ strong { font-weight: 600; color: var(--accent-strong); }
   padding: 48px var(--gutter) 88px;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(180deg, #ffffff 0%, #e4dacd 100%);
+  background: #ffffff;
   color: #12110f;
 }
 
@@ -418,17 +418,17 @@ strong { font-weight: 600; color: var(--accent-strong); }
   place-items: center;
   width: 48px;
   height: 48px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(61, 45, 35, 0.22);
   border-radius: 50%;
-  background: rgba(27, 25, 23, 0.85);
+  background: rgba(251, 249, 245, 0.94);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  color: var(--accent);
+  color: #3d2d23;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
   -webkit-tap-highlight-color: transparent;
 }
-.sound-toggle.is-on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.sound-toggle.is-on { background: #fffdf8; border-color: #5e4739; color: #5e4739; }
 .sound-toggle:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
 
 /* ============ Nosotros (carrusel) ============ */
